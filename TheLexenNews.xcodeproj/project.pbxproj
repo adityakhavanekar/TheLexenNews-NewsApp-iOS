@@ -17,6 +17,10 @@
 		0A368ABD2C63F4730085DDA7 /* TheLexenNewsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A368ABC2C63F4730085DDA7 /* TheLexenNewsTests.swift */; };
 		0A368AC72C63F4730085DDA7 /* TheLexenNewsUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A368AC62C63F4730085DDA7 /* TheLexenNewsUITests.swift */; };
 		0A368AC92C63F4730085DDA7 /* TheLexenNewsUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A368AC82C63F4730085DDA7 /* TheLexenNewsUITestsLaunchTests.swift */; };
+		0A368AD92C63F52F0085DDA7 /* LaunchViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0A368AD82C63F52F0085DDA7 /* LaunchViewController.xib */; };
+		0A368ADA2C63F52F0085DDA7 /* LaunchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A368AD72C63F52F0085DDA7 /* LaunchViewController.swift */; };
+		0A368ADE2C6415E50085DDA7 /* HomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0A368ADD2C6415E50085DDA7 /* HomeViewController.xib */; };
+		0A368ADF2C6415E50085DDA7 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A368ADC2C6415E50085DDA7 /* HomeViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +55,10 @@
 		0A368AC22C63F4730085DDA7 /* TheLexenNewsUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TheLexenNewsUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		0A368AC62C63F4730085DDA7 /* TheLexenNewsUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TheLexenNewsUITests.swift; sourceTree = "<group>"; };
 		0A368AC82C63F4730085DDA7 /* TheLexenNewsUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TheLexenNewsUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		0A368AD72C63F52F0085DDA7 /* LaunchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchViewController.swift; sourceTree = "<group>"; };
+		0A368AD82C63F52F0085DDA7 /* LaunchViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LaunchViewController.xib; sourceTree = "<group>"; };
+		0A368ADC2C6415E50085DDA7 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		0A368ADD2C6415E50085DDA7 /* HomeViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,6 +109,7 @@
 		0A368AA12C63F4720085DDA7 /* TheLexenNews */ = {
 			isa = PBXGroup;
 			children = (
+				0A368AD52C63F50F0085DDA7 /* Modules */,
 				0A368AA22C63F4720085DDA7 /* AppDelegate.swift */,
 				0A368AA42C63F4720085DDA7 /* SceneDelegate.swift */,
 				0A368AA62C63F4720085DDA7 /* ViewController.swift */,
@@ -128,6 +137,33 @@
 				0A368AC82C63F4730085DDA7 /* TheLexenNewsUITestsLaunchTests.swift */,
 			);
 			path = TheLexenNewsUITests;
+			sourceTree = "<group>";
+		};
+		0A368AD52C63F50F0085DDA7 /* Modules */ = {
+			isa = PBXGroup;
+			children = (
+				0A368ADB2C6415C30085DDA7 /* HomeModule */,
+				0A368AD62C63F51E0085DDA7 /* LaunchModule */,
+			);
+			path = Modules;
+			sourceTree = "<group>";
+		};
+		0A368AD62C63F51E0085DDA7 /* LaunchModule */ = {
+			isa = PBXGroup;
+			children = (
+				0A368AD72C63F52F0085DDA7 /* LaunchViewController.swift */,
+				0A368AD82C63F52F0085DDA7 /* LaunchViewController.xib */,
+			);
+			path = LaunchModule;
+			sourceTree = "<group>";
+		};
+		0A368ADB2C6415C30085DDA7 /* HomeModule */ = {
+			isa = PBXGroup;
+			children = (
+				0A368ADC2C6415E50085DDA7 /* HomeViewController.swift */,
+				0A368ADD2C6415E50085DDA7 /* HomeViewController.xib */,
+			);
+			path = HomeModule;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -236,7 +272,9 @@
 			files = (
 				0A368AAF2C63F4730085DDA7 /* Assets.xcassets in Resources */,
 				0A368AB22C63F4730085DDA7 /* Base in Resources */,
+				0A368ADE2C6415E50085DDA7 /* HomeViewController.xib in Resources */,
 				0A368AAA2C63F4720085DDA7 /* Base in Resources */,
+				0A368AD92C63F52F0085DDA7 /* LaunchViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -262,9 +300,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				0A368AA72C63F4720085DDA7 /* ViewController.swift in Sources */,
+				0A368ADA2C63F52F0085DDA7 /* LaunchViewController.swift in Sources */,
 				0A368AA32C63F4720085DDA7 /* AppDelegate.swift in Sources */,
 				0A368AA52C63F4720085DDA7 /* SceneDelegate.swift in Sources */,
 				0A368AAD2C63F4720085DDA7 /* TheLexenNews.xcdatamodeld in Sources */,
+				0A368ADF2C6415E50085DDA7 /* HomeViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
