@@ -45,45 +45,66 @@ class HomeViewController: UIViewController {
 
 extension HomeViewController:UITableViewDelegate,UITableViewDataSource{
     
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return 2
+    }
+    
+    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        switch section{
+        case 0:
+            let view = Bundle.main.loadNibNamed(HomeConstants.BreakingNewsHeaderTableViewCell, owner: self)?.first as? BreakingNewsHeaderTableViewCell
+            return view
+        case 1:
+            let view = Bundle.main.loadNibNamed(HomeConstants.BreakingNewsHeaderTableViewCell, owner: self)?.first as? BreakingNewsHeaderTableViewCell
+            view?.headerLabel.text = HomeConstants.recomendations
+            return view
+        default:
+            return nil
+        }
+    }
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        4
+        switch section{
+        case 0:
+            return 1
+        case 1:
+            return 5
+        default:
+            return 0
+        }
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        switch indexPath.row{
+        switch indexPath.section{
         case 0:
-            guard let cell = homeTableView.dequeueReusableCell(withIdentifier: HomeConstants.BreakingNewsHeaderTableViewCell, for: indexPath) as? BreakingNewsHeaderTableViewCell else{
-                return UITableViewCell()
-            }
+            guard let cell = homeTableView.dequeueReusableCell(withIdentifier: HomeConstants.BreakingNewsTableViewCell, for: indexPath) as? BreakingNewsTableViewCell else{ return UITableViewCell() }
             return cell
         case 1:
-            guard let cell = homeTableView.dequeueReusableCell(withIdentifier: HomeConstants.BreakingNewsTableViewCell, for: indexPath) as? BreakingNewsTableViewCell else{
-                return UITableViewCell()
-            }
-            return cell
-        case 2:
-            guard let cell = homeTableView.dequeueReusableCell(withIdentifier: HomeConstants.BreakingNewsHeaderTableViewCell, for: indexPath) as? BreakingNewsHeaderTableViewCell else{
-                return UITableViewCell()
-            }
-            cell.headerLabel.text = HomeConstants.recomendations
-            return cell
-        default:
             guard let cell = homeTableView.dequeueReusableCell(withIdentifier: HomeConstants.RecomendationsTableViewCell, for: indexPath) as? RecomendationsTableViewCell else{ return UITableViewCell() }
             return cell
+        default:
+            return UITableViewCell()
         }
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        switch indexPath.row{
+        switch indexPath.section{
         case 0:
-            return 50
-        case 1:
-            return 200
-        case 2:
-            return 50
+            return 220
         default:
             return 120
         }
     }
     
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return 50
+    }
+    
+    func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
+        return CGFloat.leastNormalMagnitude
+    }
+
+    func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
+        return UIView()
+    }
 }

@@ -17,7 +17,7 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="6ii-2g-m5d">
-                        <rect key="frame" x="20" y="0.0" width="428" height="216"/>
+                        <rect key="frame" x="20" y="10" width="428" height="206"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="LeM-nY-KaL">
                             <size key="itemSize" width="128" height="128"/>
@@ -29,7 +29,7 @@
                 </subviews>
                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                 <constraints>
-                    <constraint firstItem="6ii-2g-m5d" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="C8K-zB-D0R"/>
+                    <constraint firstItem="6ii-2g-m5d" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="10" id="C8K-zB-D0R"/>
                     <constraint firstAttribute="bottom" secondItem="6ii-2g-m5d" secondAttribute="bottom" constant="10" id="THs-hY-dpJ"/>
                     <constraint firstItem="6ii-2g-m5d" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="20" id="dtV-Nw-5d9"/>
                     <constraint firstAttribute="trailing" secondItem="6ii-2g-m5d" secondAttribute="trailing" constant="20" id="i0h-v6-CiU"/>

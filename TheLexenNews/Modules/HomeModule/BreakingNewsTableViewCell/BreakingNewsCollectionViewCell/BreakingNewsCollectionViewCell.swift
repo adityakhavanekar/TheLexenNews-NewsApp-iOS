@@ -23,7 +23,9 @@ class BreakingNewsCollectionViewCell: UICollectionViewCell {
         self.layer.cornerRadius = 20
         categoryLabel.clipsToBounds = true
         categoryLabel.layer.cornerRadius = 10
-        UIHelperFunctions().addGradientToImageView(newsBannerImageView)
+        DispatchQueue.main.asyncAfter(deadline: .now()+1){
+            UIHelperFunctions().addGradientToImageView(self.newsBannerImageView)
+        }
     }
 
 }
