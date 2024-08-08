@@ -34,7 +34,7 @@ class BreakingNewsTableViewCell: UITableViewCell {
 extension BreakingNewsTableViewCell: UICollectionViewDelegate,UICollectionViewDataSource,UICollectionViewDelegateFlowLayout{
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 5
+        return 10
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -46,7 +46,7 @@ extension BreakingNewsTableViewCell: UICollectionViewDelegate,UICollectionViewDa
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
-        return 10
+        return 0
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
@@ -54,7 +54,6 @@ extension BreakingNewsTableViewCell: UICollectionViewDelegate,UICollectionViewDa
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: self.breakingNewsCollectionView.frame.width*0.85, height: self.breakingNewsCollectionView.frame.height)
+        return CGSize(width: self.breakingNewsCollectionView.frame.width, height: self.breakingNewsCollectionView.frame.height)
     }
-    
 }
