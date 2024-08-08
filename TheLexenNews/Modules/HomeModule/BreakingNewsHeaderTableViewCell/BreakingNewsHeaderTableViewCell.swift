@@ -9,6 +9,8 @@ import UIKit
 
 class BreakingNewsHeaderTableViewCell: UITableViewCell {
 
+    @IBOutlet weak var headerLabel: UILabel!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
     }

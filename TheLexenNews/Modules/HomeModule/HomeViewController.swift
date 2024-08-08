@@ -64,6 +64,7 @@ extension HomeViewController:UITableViewDelegate,UITableViewDataSource{
             guard let cell = homeTableView.dequeueReusableCell(withIdentifier: HomeConstants.BreakingNewsHeaderTableViewCell, for: indexPath) as? BreakingNewsHeaderTableViewCell else{
                 return UITableViewCell()
             }
+            cell.headerLabel.text = "Recomendations"
             return cell
         }
     }
