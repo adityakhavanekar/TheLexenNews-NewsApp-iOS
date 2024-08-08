@@ -15,7 +15,11 @@ class BreakingNewsCollectionViewCell: UICollectionViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        
+        setupUI()
+    }
+    
+    func setupUI(){
+        self.layer.cornerRadius = 10
     }
 
 }

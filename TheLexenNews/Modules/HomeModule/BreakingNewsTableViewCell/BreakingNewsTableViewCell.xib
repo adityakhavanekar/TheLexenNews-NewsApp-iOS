@@ -4,7 +4,6 @@
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22685"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
-        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -18,8 +17,8 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="6ii-2g-m5d">
-                        <rect key="frame" x="20" y="10" width="428" height="206"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <rect key="frame" x="20" y="0.0" width="428" height="216"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="LeM-nY-KaL">
                             <size key="itemSize" width="128" height="128"/>
                             <size key="headerReferenceSize" width="0.0" height="0.0"/>
@@ -28,23 +27,20 @@
                         </collectionViewFlowLayout>
                     </collectionView>
                 </subviews>
+                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                 <constraints>
-                    <constraint firstItem="6ii-2g-m5d" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="10" id="C8K-zB-D0R"/>
+                    <constraint firstItem="6ii-2g-m5d" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="C8K-zB-D0R"/>
                     <constraint firstAttribute="bottom" secondItem="6ii-2g-m5d" secondAttribute="bottom" constant="10" id="THs-hY-dpJ"/>
                     <constraint firstItem="6ii-2g-m5d" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="20" id="dtV-Nw-5d9"/>
                     <constraint firstAttribute="trailing" secondItem="6ii-2g-m5d" secondAttribute="trailing" constant="20" id="i0h-v6-CiU"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <connections>
                 <outlet property="breakingNewsCollectionView" destination="6ii-2g-m5d" id="zxP-Oa-njc"/>
             </connections>
             <point key="canvasLocation" x="251.90839694656486" y="83.098591549295776"/>
         </tableViewCell>
     </objects>
-    <resources>
-        <systemColor name="systemBackgroundColor">
-            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
-    </resources>
 </document>
