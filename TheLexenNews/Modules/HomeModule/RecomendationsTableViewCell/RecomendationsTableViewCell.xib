@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="32700.99.1234" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22685"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="RecomendationsTableViewCell" rowHeight="168" id="KGk-i7-Jjw" customClass="RecomendationsTableViewCell" customModule="TheLexenNews" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="490" height="168"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="490" height="168"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="NewsPlaceholder" translatesAutoresizingMaskIntoConstraints="NO" id="Bow-AV-qcP">
+                        <rect key="frame" x="20" y="10" width="147" height="148"/>
+                    </imageView>
+                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" translatesAutoresizingMaskIntoConstraints="NO" id="z3A-sM-uEz">
+                        <rect key="frame" x="187" y="10" width="283" height="148"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sports" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Y3G-VC-1oq">
+                                <rect key="frame" x="0.0" y="0.0" width="283" height="25"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="25" id="b7a-LO-Ige"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="What Training does a volleyball player need?" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="psN-z8-uSR">
+                                <rect key="frame" x="0.0" y="25" width="283" height="98"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Mckenzie" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="W8r-kZ-ygb">
+                                <rect key="frame" x="0.0" y="123" width="283" height="25"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="25" id="o3I-Z5-EH6"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                    </stackView>
+                </subviews>
+                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                <constraints>
+                    <constraint firstItem="Bow-AV-qcP" firstAttribute="width" secondItem="H2p-sc-9uM" secondAttribute="width" multiplier="0.3" id="Ieu-F4-u41"/>
+                    <constraint firstItem="z3A-sM-uEz" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="10" id="TW8-Hc-wSU"/>
+                    <constraint firstAttribute="trailing" secondItem="z3A-sM-uEz" secondAttribute="trailing" constant="20" id="XHa-y9-oLk"/>
+                    <constraint firstAttribute="bottom" secondItem="Bow-AV-qcP" secondAttribute="bottom" constant="10" id="fRM-vy-stu"/>
+                    <constraint firstItem="Bow-AV-qcP" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="20" id="fX1-kn-Wam"/>
+                    <constraint firstItem="Bow-AV-qcP" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="10" id="qHf-8e-rFB"/>
+                    <constraint firstItem="z3A-sM-uEz" firstAttribute="leading" secondItem="Bow-AV-qcP" secondAttribute="trailing" constant="20" id="sIw-wK-O3a"/>
+                    <constraint firstAttribute="bottom" secondItem="z3A-sM-uEz" secondAttribute="bottom" constant="10" id="z8T-EJ-ium"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <connections>
+                <outlet property="newsAuthorLabel" destination="W8r-kZ-ygb" id="2BA-8H-u7f"/>
+                <outlet property="newsBannerImageView" destination="Bow-AV-qcP" id="lgx-So-zUt"/>
+                <outlet property="newsTitleLabel" destination="psN-z8-uSR" id="R6Q-To-wyu"/>
+                <outlet property="sourceNameLabel" destination="Y3G-VC-1oq" id="UhV-Dm-e9k"/>
+            </connections>
+            <point key="canvasLocation" x="268.70229007633588" y="63.380281690140848"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="NewsPlaceholder" width="500" height="265"/>
+    </resources>
+</document>

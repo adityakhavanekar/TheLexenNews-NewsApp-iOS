@@ -35,6 +35,7 @@ class HomeViewController: UIViewController {
     func setupCells(){
         homeTableView.register(UINib(nibName: HomeConstants.BreakingNewsHeaderTableViewCell, bundle: nil), forCellReuseIdentifier: HomeConstants.BreakingNewsHeaderTableViewCell)
         homeTableView.register(UINib(nibName: HomeConstants.BreakingNewsTableViewCell, bundle: nil), forCellReuseIdentifier: HomeConstants.BreakingNewsTableViewCell)
+        homeTableView.register(UINib(nibName: HomeConstants.RecomendationsTableViewCell, bundle: nil), forCellReuseIdentifier: HomeConstants.RecomendationsTableViewCell)
         homeTableView.separatorColor = .clear
         homeTableView.dataSource = self
         homeTableView.delegate = self
@@ -45,7 +46,7 @@ class HomeViewController: UIViewController {
 extension HomeViewController:UITableViewDelegate,UITableViewDataSource{
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        3
+        4
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -60,11 +61,14 @@ extension HomeViewController:UITableViewDelegate,UITableViewDataSource{
                 return UITableViewCell()
             }
             return cell
-        default:
+        case 2:
             guard let cell = homeTableView.dequeueReusableCell(withIdentifier: HomeConstants.BreakingNewsHeaderTableViewCell, for: indexPath) as? BreakingNewsHeaderTableViewCell else{
                 return UITableViewCell()
             }
-            cell.headerLabel.text = "Recomendations"
+            cell.headerLabel.text = HomeConstants.recomendations
+            return cell
+        default:
+            guard let cell = homeTableView.dequeueReusableCell(withIdentifier: HomeConstants.RecomendationsTableViewCell, for: indexPath) as? RecomendationsTableViewCell else{ return UITableViewCell() }
             return cell
         }
     }
@@ -75,8 +79,10 @@ extension HomeViewController:UITableViewDelegate,UITableViewDataSource{
             return 50
         case 1:
             return 200
-        default:
+        case 2:
             return 50
+        default:
+            return 120
         }
     }
     

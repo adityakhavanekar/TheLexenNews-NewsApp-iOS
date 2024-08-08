@@ -11,4 +11,6 @@ struct HomeConstants{
     static let BreakingNewsHeaderTableViewCell = "BreakingNewsHeaderTableViewCell"
     static let BreakingNewsTableViewCell = "BreakingNewsTableViewCell"
     static let BreakingNewsCollectionViewCell = "BreakingNewsCollectionViewCell"
+    static let RecomendationsTableViewCell = "RecomendationsTableViewCell"
+    static let recomendations = "Recomendations"
 }
