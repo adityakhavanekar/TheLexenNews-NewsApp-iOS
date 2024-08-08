@@ -21,6 +21,8 @@
 		0A368ADA2C63F52F0085DDA7 /* LaunchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A368AD72C63F52F0085DDA7 /* LaunchViewController.swift */; };
 		0A368ADE2C6415E50085DDA7 /* HomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0A368ADD2C6415E50085DDA7 /* HomeViewController.xib */; };
 		0A368ADF2C6415E50085DDA7 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A368ADC2C6415E50085DDA7 /* HomeViewController.swift */; };
+		0A368AE32C644D080085DDA7 /* BreakingNewsHeaderTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0A368AE22C644D080085DDA7 /* BreakingNewsHeaderTableViewCell.xib */; };
+		0A368AE42C644D080085DDA7 /* BreakingNewsHeaderTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A368AE12C644D080085DDA7 /* BreakingNewsHeaderTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -59,6 +61,8 @@
 		0A368AD82C63F52F0085DDA7 /* LaunchViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LaunchViewController.xib; sourceTree = "<group>"; };
 		0A368ADC2C6415E50085DDA7 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		0A368ADD2C6415E50085DDA7 /* HomeViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeViewController.xib; sourceTree = "<group>"; };
+		0A368AE12C644D080085DDA7 /* BreakingNewsHeaderTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BreakingNewsHeaderTableViewCell.swift; sourceTree = "<group>"; };
+		0A368AE22C644D080085DDA7 /* BreakingNewsHeaderTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BreakingNewsHeaderTableViewCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -160,10 +164,20 @@
 		0A368ADB2C6415C30085DDA7 /* HomeModule */ = {
 			isa = PBXGroup;
 			children = (
+				0A368AE02C644CDA0085DDA7 /* BreakingNewsHeaderTableViewCell */,
 				0A368ADC2C6415E50085DDA7 /* HomeViewController.swift */,
 				0A368ADD2C6415E50085DDA7 /* HomeViewController.xib */,
 			);
 			path = HomeModule;
+			sourceTree = "<group>";
+		};
+		0A368AE02C644CDA0085DDA7 /* BreakingNewsHeaderTableViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				0A368AE12C644D080085DDA7 /* BreakingNewsHeaderTableViewCell.swift */,
+				0A368AE22C644D080085DDA7 /* BreakingNewsHeaderTableViewCell.xib */,
+			);
+			path = BreakingNewsHeaderTableViewCell;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -272,6 +286,7 @@
 			files = (
 				0A368AAF2C63F4730085DDA7 /* Assets.xcassets in Resources */,
 				0A368AB22C63F4730085DDA7 /* Base in Resources */,
+				0A368AE32C644D080085DDA7 /* BreakingNewsHeaderTableViewCell.xib in Resources */,
 				0A368ADE2C6415E50085DDA7 /* HomeViewController.xib in Resources */,
 				0A368AAA2C63F4720085DDA7 /* Base in Resources */,
 				0A368AD92C63F52F0085DDA7 /* LaunchViewController.xib in Resources */,
@@ -303,6 +318,7 @@
 				0A368ADA2C63F52F0085DDA7 /* LaunchViewController.swift in Sources */,
 				0A368AA32C63F4720085DDA7 /* AppDelegate.swift in Sources */,
 				0A368AA52C63F4720085DDA7 /* SceneDelegate.swift in Sources */,
+				0A368AE42C644D080085DDA7 /* BreakingNewsHeaderTableViewCell.swift in Sources */,
 				0A368AAD2C63F4720085DDA7 /* TheLexenNews.xcdatamodeld in Sources */,
 				0A368ADF2C6415E50085DDA7 /* HomeViewController.swift in Sources */,
 			);
