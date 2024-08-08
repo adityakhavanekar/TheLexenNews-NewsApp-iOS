@@ -44,25 +44,7 @@ class HomeViewController: UIViewController {
 
 
 extension HomeViewController:UITableViewDelegate,UITableViewDataSource{
-    
-    func numberOfSections(in tableView: UITableView) -> Int {
-        return 2
-    }
-    
-    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-        switch section{
-        case 0:
-            let view = Bundle.main.loadNibNamed(HomeConstants.BreakingNewsHeaderTableViewCell, owner: self)?.first as? BreakingNewsHeaderTableViewCell
-            return view
-        case 1:
-            let view = Bundle.main.loadNibNamed(HomeConstants.BreakingNewsHeaderTableViewCell, owner: self)?.first as? BreakingNewsHeaderTableViewCell
-            view?.headerLabel.text = HomeConstants.recomendations
-            return view
-        default:
-            return nil
-        }
-    }
-    
+//    CELL CONFIGRATION
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         switch section{
         case 0:
@@ -93,6 +75,25 @@ extension HomeViewController:UITableViewDelegate,UITableViewDataSource{
             return 220
         default:
             return 120
+        }
+    }
+    
+//    HEADER CONFIGRATION
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return 2
+    }
+    
+    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        switch section{
+        case 0:
+            let view = Bundle.main.loadNibNamed(HomeConstants.BreakingNewsHeaderTableViewCell, owner: self)?.first as? BreakingNewsHeaderTableViewCell
+            return view
+        case 1:
+            let view = Bundle.main.loadNibNamed(HomeConstants.BreakingNewsHeaderTableViewCell, owner: self)?.first as? BreakingNewsHeaderTableViewCell
+            view?.headerLabel.text = HomeConstants.recomendations
+            return view
+        default:
+            return nil
         }
     }
     
