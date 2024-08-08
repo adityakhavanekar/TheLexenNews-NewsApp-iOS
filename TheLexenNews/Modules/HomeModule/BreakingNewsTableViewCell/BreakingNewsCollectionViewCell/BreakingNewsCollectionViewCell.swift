@@ -12,6 +12,7 @@ class BreakingNewsCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var newsBannerImageView: UIImageView!
     @IBOutlet weak var newsAuthorNameLabel: UILabel!
     @IBOutlet weak var newsTitleLabel: UILabel!
+    @IBOutlet weak var categoryLabel: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -19,7 +20,13 @@ class BreakingNewsCollectionViewCell: UICollectionViewCell {
     }
     
     func setupUI(){
-        self.layer.cornerRadius = 10
+        self.layer.cornerRadius = 20
+        categoryLabel.clipsToBounds = true
+        categoryLabel.layer.cornerRadius = 10
+        UIHelperFunctions().addGradientToImageView(newsBannerImageView)
     }
 
+}
+extension BreakingNewsCollectionViewCell{
+    
 }

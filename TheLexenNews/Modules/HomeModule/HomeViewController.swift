@@ -29,6 +29,7 @@ class HomeViewController: UIViewController {
     
     func setupUI(){
         setupCells()
+        logoImageView.layer.cornerRadius = 10
     }
     
     func setupCells(){

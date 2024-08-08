@@ -30,6 +30,7 @@
 		0A368AF12C6451A50085DDA7 /* BreakingNewsCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0A368AF02C6451A50085DDA7 /* BreakingNewsCollectionViewCell.xib */; };
 		0A368AF22C6451A50085DDA7 /* BreakingNewsCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A368AEF2C6451A50085DDA7 /* BreakingNewsCollectionViewCell.swift */; };
 		0A37ACDC2C652E2A00DCC684 /* CaraouselCollectionViewLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A37ACDB2C652E2A00DCC684 /* CaraouselCollectionViewLayout.swift */; };
+		0A7D6DEB2C65405D00D80945 /* UIHelperFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A7D6DEA2C65405D00D80945 /* UIHelperFunctions.swift */; };
 		54FB54C2CED14295493CE4B5 /* Pods_TheLexenNewsTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6BA445DC185302662857B4D1 /* Pods_TheLexenNewsTests.framework */; };
 		6CFCA3CCD5C6AEB56F715EDE /* Pods_TheLexenNews.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 201D4A5AD7D15A583F17AB6C /* Pods_TheLexenNews.framework */; };
 /* End PBXBuildFile section */
@@ -79,6 +80,7 @@
 		0A368AEF2C6451A50085DDA7 /* BreakingNewsCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BreakingNewsCollectionViewCell.swift; sourceTree = "<group>"; };
 		0A368AF02C6451A50085DDA7 /* BreakingNewsCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BreakingNewsCollectionViewCell.xib; sourceTree = "<group>"; };
 		0A37ACDB2C652E2A00DCC684 /* CaraouselCollectionViewLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CaraouselCollectionViewLayout.swift; sourceTree = "<group>"; };
+		0A7D6DEA2C65405D00D80945 /* UIHelperFunctions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIHelperFunctions.swift; sourceTree = "<group>"; };
 		201D4A5AD7D15A583F17AB6C /* Pods_TheLexenNews.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TheLexenNews.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		3401FB75E4B635D5104D5D41 /* Pods-TheLexenNews-TheLexenNewsUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TheLexenNews-TheLexenNewsUITests.release.xcconfig"; path = "Target Support Files/Pods-TheLexenNews-TheLexenNewsUITests/Pods-TheLexenNews-TheLexenNewsUITests.release.xcconfig"; sourceTree = "<group>"; };
 		3A7308D7C22F27F786238180 /* Pods-TheLexenNewsTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TheLexenNewsTests.release.xcconfig"; path = "Target Support Files/Pods-TheLexenNewsTests/Pods-TheLexenNewsTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -216,6 +218,7 @@
 			children = (
 				0A368AE62C644FB00085DDA7 /* Constants.swift */,
 				0A37ACDB2C652E2A00DCC684 /* CaraouselCollectionViewLayout.swift */,
+				0A7D6DEA2C65405D00D80945 /* UIHelperFunctions.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -511,6 +514,7 @@
 				0A368AA72C63F4720085DDA7 /* ViewController.swift in Sources */,
 				0A368AF22C6451A50085DDA7 /* BreakingNewsCollectionViewCell.swift in Sources */,
 				0A368ADA2C63F52F0085DDA7 /* LaunchViewController.swift in Sources */,
+				0A7D6DEB2C65405D00D80945 /* UIHelperFunctions.swift in Sources */,
 				0A368AA32C63F4720085DDA7 /* AppDelegate.swift in Sources */,
 				0A368AA52C63F4720085DDA7 /* SceneDelegate.swift in Sources */,
 				0A368AE42C644D080085DDA7 /* BreakingNewsHeaderTableViewCell.swift in Sources */,
