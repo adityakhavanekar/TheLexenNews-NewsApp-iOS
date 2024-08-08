@@ -23,6 +23,7 @@
 		0A368ADF2C6415E50085DDA7 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A368ADC2C6415E50085DDA7 /* HomeViewController.swift */; };
 		0A368AE32C644D080085DDA7 /* BreakingNewsHeaderTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0A368AE22C644D080085DDA7 /* BreakingNewsHeaderTableViewCell.xib */; };
 		0A368AE42C644D080085DDA7 /* BreakingNewsHeaderTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A368AE12C644D080085DDA7 /* BreakingNewsHeaderTableViewCell.swift */; };
+		0A368AE72C644FB00085DDA7 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A368AE62C644FB00085DDA7 /* Constants.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -63,6 +64,7 @@
 		0A368ADD2C6415E50085DDA7 /* HomeViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeViewController.xib; sourceTree = "<group>"; };
 		0A368AE12C644D080085DDA7 /* BreakingNewsHeaderTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BreakingNewsHeaderTableViewCell.swift; sourceTree = "<group>"; };
 		0A368AE22C644D080085DDA7 /* BreakingNewsHeaderTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BreakingNewsHeaderTableViewCell.xib; sourceTree = "<group>"; };
+		0A368AE62C644FB00085DDA7 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -113,6 +115,7 @@
 		0A368AA12C63F4720085DDA7 /* TheLexenNews */ = {
 			isa = PBXGroup;
 			children = (
+				0A368AE52C644FA00085DDA7 /* Utilities */,
 				0A368AD52C63F50F0085DDA7 /* Modules */,
 				0A368AA22C63F4720085DDA7 /* AppDelegate.swift */,
 				0A368AA42C63F4720085DDA7 /* SceneDelegate.swift */,
@@ -178,6 +181,14 @@
 				0A368AE22C644D080085DDA7 /* BreakingNewsHeaderTableViewCell.xib */,
 			);
 			path = BreakingNewsHeaderTableViewCell;
+			sourceTree = "<group>";
+		};
+		0A368AE52C644FA00085DDA7 /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				0A368AE62C644FB00085DDA7 /* Constants.swift */,
+			);
+			path = Utilities;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -321,6 +332,7 @@
 				0A368AE42C644D080085DDA7 /* BreakingNewsHeaderTableViewCell.swift in Sources */,
 				0A368AAD2C63F4720085DDA7 /* TheLexenNews.xcdatamodeld in Sources */,
 				0A368ADF2C6415E50085DDA7 /* HomeViewController.swift in Sources */,
+				0A368AE72C644FB00085DDA7 /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

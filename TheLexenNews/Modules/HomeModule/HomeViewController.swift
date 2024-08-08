@@ -32,7 +32,7 @@ class HomeViewController: UIViewController {
     }
     
     func setupCells(){
-        homeTableView.register(UINib(nibName: "BreakingNewsHeaderTableViewCell", bundle: nil), forCellReuseIdentifier: "BreakingNewsHeaderTableViewCell")
+        homeTableView.register(UINib(nibName: HomeConstants.BreakingNewsHeaderTableViewCell, bundle: nil), forCellReuseIdentifier: HomeConstants.BreakingNewsHeaderTableViewCell)
         homeTableView.separatorColor = .clear
         homeTableView.dataSource = self
         homeTableView.delegate = self
@@ -47,7 +47,7 @@ extension HomeViewController:UITableViewDelegate,UITableViewDataSource{
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = homeTableView.dequeueReusableCell(withIdentifier: "BreakingNewsHeaderTableViewCell", for: indexPath) as? BreakingNewsHeaderTableViewCell else{
+        guard let cell = homeTableView.dequeueReusableCell(withIdentifier: HomeConstants.BreakingNewsHeaderTableViewCell, for: indexPath) as? BreakingNewsHeaderTableViewCell else{
             return UITableViewCell()
         }
         
