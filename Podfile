@@ -6,7 +6,7 @@ target 'TheLexenNews' do
   use_frameworks!
 
   # Pods for TheLexenNews
-  pod 'HSCycleGalleryView'
+  pod 'SDWebImage'
 
   target 'TheLexenNewsTests' do
     inherit! :search_paths

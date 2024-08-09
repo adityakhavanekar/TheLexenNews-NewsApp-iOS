@@ -1,16 +1,18 @@
 PODS:
-  - HSCycleGalleryView (1.2.0)
+  - SDWebImage (5.19.4):
+    - SDWebImage/Core (= 5.19.4)
+  - SDWebImage/Core (5.19.4)
 
 DEPENDENCIES:
-  - HSCycleGalleryView
+  - SDWebImage
 
 SPEC REPOS:
   trunk:
-    - HSCycleGalleryView
+    - SDWebImage
 
 SPEC CHECKSUMS:
-  HSCycleGalleryView: 5101435175a26d08f1c062cf6cb245f58f09b425
+  SDWebImage: 066c47b573f408f18caa467d71deace7c0f8280d
 
-PODFILE CHECKSUM: 930e0ef1cdad0e33e5ed5ace8e77a0496c1f5a33
+PODFILE CHECKSUM: 8524ea9924ca6a48fbba09b7205d8ff4ebaafdfe
 
 COCOAPODS: 1.15.2
