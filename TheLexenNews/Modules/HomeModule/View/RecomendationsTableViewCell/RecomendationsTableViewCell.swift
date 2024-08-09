@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import SDWebImage
 
 class RecomendationsTableViewCell: UITableViewCell {
 
@@ -32,5 +33,6 @@ class RecomendationsTableViewCell: UITableViewCell {
         newsAuthorLabel.text = data.author
         newsTitleLabel.text = data.title
         sourceNameLabel.text = data.source?.name
+        newsBannerImageView.sd_setImage(with: URL(string: data.urlToImage ?? ""))
     }
 }
