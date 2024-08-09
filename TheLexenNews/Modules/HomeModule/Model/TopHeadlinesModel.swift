@@ -15,10 +15,10 @@ struct TopHeadlinesModel: Codable {
 
 // MARK: - Article
 struct TopHeadlinesArticles: Codable {
-    let source: Source
-    let author, title: String
+    let source: Source?
+    let author, title: String?
     let description: String?
-    let url: String
+    let url: String?
     let urlToImage: String?
     let publishedAt: String?
     let content: String?
@@ -26,8 +26,8 @@ struct TopHeadlinesArticles: Codable {
 
 // MARK: - Source
 struct Source: Codable {
-    let id: ID
-    let name: Name
+    let id: ID?
+    let name: Name?
 }
 
 enum ID: String, Codable {
