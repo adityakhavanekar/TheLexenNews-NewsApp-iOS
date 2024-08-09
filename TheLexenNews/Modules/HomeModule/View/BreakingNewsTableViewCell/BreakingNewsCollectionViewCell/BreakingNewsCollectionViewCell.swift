@@ -32,7 +32,7 @@ class BreakingNewsCollectionViewCell: UICollectionViewCell {
     func setupData(data:TopHeadlinesArticles){
         newsAuthorNameLabel.text = data.author
         newsTitleLabel.text = data.title
-        categoryLabel.text = data.source.name.rawValue
+        categoryLabel.text = data.source?.name?.rawValue
         newsBannerImageView.sd_setImage(with: URL(string: data.urlToImage ?? ""))
     }
 
