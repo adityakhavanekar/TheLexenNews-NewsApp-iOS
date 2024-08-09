@@ -25,6 +25,7 @@ enum APIEndpoints: String {
     }
 
     case topHeadlines = "top-headlines"
+    case everything = "everything"
     
     var url: URL {
         guard let url = URL(string: baseUrl) else {
@@ -35,6 +36,7 @@ enum APIEndpoints: String {
 }
 
 enum APIHeaders {
+    
     case authorization
     
     var value: [String: String] {
@@ -55,6 +57,19 @@ enum APICountryParams{
             return ["country":"us"]
         }
     }
+}
+
+enum APIParams{
+    
+    case keyword
+    
+    var value:[String:String]{
+        switch self{
+        case .keyword:
+            return ["q":"keyword"]
+        }
+    }
+    
 }
 
 struct NetworkErrors{

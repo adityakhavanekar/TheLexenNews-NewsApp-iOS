@@ -27,4 +27,10 @@ class RecomendationsTableViewCell: UITableViewCell {
         newsBannerImageView.clipsToBounds = true
         newsBannerImageView.layer.cornerRadius = 15
     }
+    
+    func setupData(data:EverythingArticle){
+        newsAuthorLabel.text = data.author
+        newsTitleLabel.text = data.title
+        sourceNameLabel.text = data.source?.name
+    }
 }

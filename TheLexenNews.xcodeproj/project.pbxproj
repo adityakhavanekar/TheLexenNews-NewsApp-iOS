@@ -33,6 +33,7 @@
 		0A44254B2C658712009F38EB /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A44254A2C658712009F38EB /* HomeViewModel.swift */; };
 		0A44254D2C658741009F38EB /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A44254C2C658741009F38EB /* NetworkManager.swift */; };
 		0A44254F2C66793C009F38EB /* NetworkConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A44254E2C66793C009F38EB /* NetworkConstants.swift */; };
+		0A4425522C6683E3009F38EB /* EverythingModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A4425512C6683E3009F38EB /* EverythingModel.swift */; };
 		0A7D6DEB2C65405D00D80945 /* UIHelperFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A7D6DEA2C65405D00D80945 /* UIHelperFunctions.swift */; };
 		0A7D6DF02C654B3D00D80945 /* RecomendationsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0A7D6DEF2C654B3D00D80945 /* RecomendationsTableViewCell.xib */; };
 		0A7D6DF12C654B3D00D80945 /* RecomendationsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A7D6DEE2C654B3D00D80945 /* RecomendationsTableViewCell.swift */; };
@@ -88,6 +89,7 @@
 		0A44254A2C658712009F38EB /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		0A44254C2C658741009F38EB /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		0A44254E2C66793C009F38EB /* NetworkConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkConstants.swift; sourceTree = "<group>"; };
+		0A4425512C6683E3009F38EB /* EverythingModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EverythingModel.swift; sourceTree = "<group>"; };
 		0A7D6DEA2C65405D00D80945 /* UIHelperFunctions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIHelperFunctions.swift; sourceTree = "<group>"; };
 		0A7D6DEE2C654B3D00D80945 /* RecomendationsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecomendationsTableViewCell.swift; sourceTree = "<group>"; };
 		0A7D6DEF2C654B3D00D80945 /* RecomendationsTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RecomendationsTableViewCell.xib; sourceTree = "<group>"; };
@@ -275,6 +277,7 @@
 			isa = PBXGroup;
 			children = (
 				0A4425482C65867D009F38EB /* TopHeadlinesModel.swift */,
+				0A4425512C6683E3009F38EB /* EverythingModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -574,6 +577,7 @@
 				0A368AA52C63F4720085DDA7 /* SceneDelegate.swift in Sources */,
 				0A368AE42C644D080085DDA7 /* BreakingNewsHeaderTableViewCell.swift in Sources */,
 				0A44254F2C66793C009F38EB /* NetworkConstants.swift in Sources */,
+				0A4425522C6683E3009F38EB /* EverythingModel.swift in Sources */,
 				0A7D6DF12C654B3D00D80945 /* RecomendationsTableViewCell.swift in Sources */,
 				0A44254B2C658712009F38EB /* HomeViewModel.swift in Sources */,
 				0A368AAD2C63F4720085DDA7 /* TheLexenNews.xcdatamodeld in Sources */,

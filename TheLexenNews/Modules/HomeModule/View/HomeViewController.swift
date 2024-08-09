@@ -18,9 +18,7 @@ class HomeViewController: UIViewController {
         super.viewDidLoad()
         setupNavigationOnHome()
         setupUI()
-        viewModel.getTopHeadlines { bool in
-            print(bool)
-        }
+        callAPI()
     }
     
     private func setupNavigationOnHome(){
@@ -33,17 +31,30 @@ class HomeViewController: UIViewController {
     }
     
     private func setupUI(){
-        setupCells()
+        setupTableView()
         logoImageView.layer.cornerRadius = 10
     }
     
-    private func setupCells(){
+    private func setupTableView(){
         homeTableView.register(UINib(nibName: HomeConstants.BreakingNewsHeaderTableViewCell, bundle: nil), forCellReuseIdentifier: HomeConstants.BreakingNewsHeaderTableViewCell)
         homeTableView.register(UINib(nibName: HomeConstants.BreakingNewsTableViewCell, bundle: nil), forCellReuseIdentifier: HomeConstants.BreakingNewsTableViewCell)
         homeTableView.register(UINib(nibName: HomeConstants.RecomendationsTableViewCell, bundle: nil), forCellReuseIdentifier: HomeConstants.RecomendationsTableViewCell)
         homeTableView.separatorColor = .clear
         homeTableView.dataSource = self
         homeTableView.delegate = self
+    }
+    
+    private func callAPI(){
+        viewModel.getEverything { bool in
+            switch bool{
+            case true:
+                DispatchQueue.main.async{
+                    self.homeTableView.reloadData()
+                }
+            case false:
+                print("Error getting data")
+            }
+        }
     }
 }
 
@@ -68,6 +79,9 @@ extension HomeViewController:UITableViewDelegate,UITableViewDataSource{
             return cell
         case 1:
             guard let cell = homeTableView.dequeueReusableCell(withIdentifier: HomeConstants.RecomendationsTableViewCell, for: indexPath) as? RecomendationsTableViewCell else{ return UITableViewCell() }
+            if let data = viewModel.getTop5EverythingNews()?[indexPath.row]{
+                cell.setupData(data: data)
+            }
             return cell
         default:
             return UITableViewCell()
