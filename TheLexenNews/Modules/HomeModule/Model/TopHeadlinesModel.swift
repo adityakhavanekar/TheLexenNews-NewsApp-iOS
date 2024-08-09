@@ -10,7 +10,7 @@ import Foundation
 struct TopHeadlinesModel: Codable {
     let status: String
     let totalResults: Int
-    let articles: [TopHeadlinesArticles]
+    var articles: [TopHeadlinesArticles]
 }
 
 // MARK: - Article
