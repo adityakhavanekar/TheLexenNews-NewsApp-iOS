@@ -10,6 +10,8 @@ import SDWebImage
 
 class NewsDetailViewController: UIViewController {
     
+    @IBOutlet weak var contentLabel: UILabel!
+    @IBOutlet weak var contentTitleLabel: UILabel!
     @IBOutlet weak var categoryLabel: UILabel!
     @IBOutlet weak var authorLalbel: UILabel!
     @IBOutlet weak var newsTitleLabel: UILabel!
@@ -21,6 +23,8 @@ class NewsDetailViewController: UIViewController {
     private var categoryLabelText = ""
     private var newsTitleLabelText = ""
     private var bannerUrl = ""
+    private var contentTitleLabelText = ""
+    private var contentLabelText = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -36,6 +40,8 @@ class NewsDetailViewController: UIViewController {
         authorLalbel.text = authorLabelText
         newsTitleLabel.text = newsTitleLabelText
         categoryLabel.text = categoryLabelText
+        contentLabel.text = contentLabelText
+        contentTitleLabel.text = contentTitleLabelText
         newsBannerImageView.sd_setImage(with: URL(string:bannerUrl))
     }
     
@@ -46,12 +52,20 @@ class NewsDetailViewController: UIViewController {
             newsTitleLabelText = everything?.title ?? ""
             categoryLabelText = everything?.source?.name ?? ""
             bannerUrl = everything?.urlToImage ?? ""
+            contentLabelText = everything?.content ?? ""
+            contentTitleLabelText = everything?.title ?? ""
         case .topHeadlines:
-            print("")
             authorLabelText = top10Headlines?.author ?? ""
             newsTitleLabelText = top10Headlines?.title ?? ""
             categoryLabelText = top10Headlines?.source?.name?.rawValue ?? ""
             bannerUrl = top10Headlines?.urlToImage ?? ""
+            contentTitleLabelText = top10Headlines?.title ?? ""
+            contentLabelText = top10Headlines?.content ?? ""
         }
     }
+    
+    @IBAction func backBtnClicked(_ sender: UIButton) {
+        self.navigationController?.popViewController(animated: true)
+    }
+    
 }
