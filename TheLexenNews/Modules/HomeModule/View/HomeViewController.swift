@@ -12,13 +12,18 @@ class HomeViewController: UIViewController {
     @IBOutlet weak var homeTableView: UITableView!
     @IBOutlet weak var logoImageView: UIImageView!
     
+    private var viewModel = HomeViewModel()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         setupNavigationOnHome()
         setupUI()
+        viewModel.getTopHeadlines { bool in
+            print(bool)
+        }
     }
     
-    func setupNavigationOnHome(){
+    private func setupNavigationOnHome(){
         self.navigationController?.navigationBar.isHidden = true
         if let viewControllers = self.navigationController?.viewControllers{
             var views = viewControllers
@@ -27,12 +32,12 @@ class HomeViewController: UIViewController {
         }
     }
     
-    func setupUI(){
+    private func setupUI(){
         setupCells()
         logoImageView.layer.cornerRadius = 10
     }
     
-    func setupCells(){
+    private func setupCells(){
         homeTableView.register(UINib(nibName: HomeConstants.BreakingNewsHeaderTableViewCell, bundle: nil), forCellReuseIdentifier: HomeConstants.BreakingNewsHeaderTableViewCell)
         homeTableView.register(UINib(nibName: HomeConstants.BreakingNewsTableViewCell, bundle: nil), forCellReuseIdentifier: HomeConstants.BreakingNewsTableViewCell)
         homeTableView.register(UINib(nibName: HomeConstants.RecomendationsTableViewCell, bundle: nil), forCellReuseIdentifier: HomeConstants.RecomendationsTableViewCell)
