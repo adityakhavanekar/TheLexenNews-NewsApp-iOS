@@ -52,7 +52,7 @@ class HomeViewController: UIViewController {
                     self.homeTableView.reloadData()
                 }
             case false:
-                print("Error getting data")
+                print(NetworkErrors.decodingError)
             }
         }
     }
@@ -60,13 +60,12 @@ class HomeViewController: UIViewController {
 
 
 extension HomeViewController:UITableViewDelegate,UITableViewDataSource{
-//    CELL CONFIGRATION
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         switch section{
         case 0:
             return 1
         case 1:
-            return 5
+            return viewModel.getTop5EverythingNews()?.count ?? 0
         default:
             return 0
         }
@@ -97,7 +96,6 @@ extension HomeViewController:UITableViewDelegate,UITableViewDataSource{
         }
     }
     
-//    HEADER CONFIGRATION
     func numberOfSections(in tableView: UITableView) -> Int {
         return 2
     }
