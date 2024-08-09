@@ -23,9 +23,16 @@ class BreakingNewsCollectionViewCell: UICollectionViewCell {
         self.layer.cornerRadius = 20
         categoryLabel.clipsToBounds = true
         categoryLabel.layer.cornerRadius = 10
-        DispatchQueue.main.asyncAfter(deadline: .now()+1){
+        DispatchQueue.main.asyncAfter(deadline: .now()+0.1){
             UIHelperFunctions().addGradientToImageView(self.newsBannerImageView)
         }
+    }
+    
+    func setupData(data:TopHeadlinesArticles){
+        newsAuthorNameLabel.text = data.author
+        newsTitleLabel.text = data.title
+        categoryLabel.text = data.source.name.rawValue
+        newsBannerImageView.sd_setImage(with: URL(string: data.urlToImage ?? ""))
     }
 
 }

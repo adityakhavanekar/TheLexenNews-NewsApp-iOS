@@ -46,10 +46,10 @@
                         </constraints>
                     </stackView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Politics" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="y4P-Kd-fnA">
-                        <rect key="frame" x="10" y="10" width="80" height="21"/>
+                        <rect key="frame" x="10" y="10" width="120" height="21"/>
                         <color key="backgroundColor" systemColor="systemBlueColor"/>
                         <constraints>
-                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="80" id="QV1-pL-4Lx"/>
+                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="120" id="QV1-pL-4Lx"/>
                             <constraint firstAttribute="height" constant="21" id="hUa-Qy-sGw"/>
                         </constraints>
                         <fontDescription key="fontDescription" type="boldSystem" pointSize="13"/>

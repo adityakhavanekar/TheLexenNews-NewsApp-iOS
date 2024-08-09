@@ -55,6 +55,16 @@ class HomeViewController: UIViewController {
                 print(NetworkErrors.decodingError)
             }
         }
+        viewModel.getTopHeadlines { bool in
+            switch bool{
+            case true:
+                DispatchQueue.main.async{
+                    self.homeTableView.reloadData()
+                }
+            case false:
+                print(NetworkErrors.decodingError)
+            }
+        }
     }
 }
 
@@ -75,6 +85,7 @@ extension HomeViewController:UITableViewDelegate,UITableViewDataSource{
         switch indexPath.section{
         case 0:
             guard let cell = homeTableView.dequeueReusableCell(withIdentifier: HomeConstants.BreakingNewsTableViewCell, for: indexPath) as? BreakingNewsTableViewCell else{ return UITableViewCell() }
+            cell.setupViewModel(viewModel: self.viewModel)
             return cell
         case 1:
             guard let cell = homeTableView.dequeueReusableCell(withIdentifier: HomeConstants.RecomendationsTableViewCell, for: indexPath) as? RecomendationsTableViewCell else{ return UITableViewCell() }

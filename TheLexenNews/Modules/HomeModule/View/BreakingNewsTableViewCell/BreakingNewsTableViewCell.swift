@@ -10,6 +10,11 @@ import UIKit
 class BreakingNewsTableViewCell: UITableViewCell {
 
     @IBOutlet weak var breakingNewsCollectionView: UICollectionView!
+    var viewModel:HomeViewModel? {
+        didSet{
+            breakingNewsCollectionView.reloadData()
+        }
+    }
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -29,18 +34,25 @@ class BreakingNewsTableViewCell: UITableViewCell {
         
     }
     
+    func setupViewModel(viewModel:HomeViewModel){
+        self.viewModel = viewModel
+    }
+    
 }
 
 extension BreakingNewsTableViewCell: UICollectionViewDelegate,UICollectionViewDataSource,UICollectionViewDelegateFlowLayout{
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 10
+        return viewModel?.getTop5Headlines()?.count ?? 0
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = breakingNewsCollectionView.dequeueReusableCell(withReuseIdentifier: HomeConstants.BreakingNewsCollectionViewCell, for: indexPath) as?  BreakingNewsCollectionViewCell
         else{
             return UICollectionViewCell()
+        }
+        if let data = viewModel?.getTop5Headlines()?[indexPath.row]{
+            cell.setupData(data: data)
         }
         return cell
     }
