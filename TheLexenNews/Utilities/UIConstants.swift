@@ -14,3 +14,8 @@ struct HomeConstants{
     static let RecomendationsTableViewCell = "RecomendationsTableViewCell"
     static let recomendations = "Recomendations"
 }
+
+enum TypeOfNews{
+    case everything
+    case topHeadlines
+}

@@ -61,4 +61,8 @@ class HomeViewModel{
         guard let top5EverythingArticles = everything?.articles?.prefix(5) else {return nil}
         return Array(top5EverythingArticles)
     }
+    
+    func getAllEverythingNews()->[EverythingArticle]?{
+        return everything?.articles
+    }
 }

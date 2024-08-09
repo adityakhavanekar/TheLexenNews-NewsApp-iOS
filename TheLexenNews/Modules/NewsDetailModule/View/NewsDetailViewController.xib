@@ -10,7 +10,8 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="NewsDetailViewController" customModule="TheLexenNews" customModuleProvider="target">
             <connections>
-                <outlet property="authorLalbel" destination="AJ9-Wk-kVD" id="jaU-3i-Kuv"/>
+                <outlet property="authorLalbel" destination="AJ9-Wk-kVD" id="mUj-8A-bgZ"/>
+                <outlet property="categoryLabel" destination="Aic-Tr-4W5" id="aVN-oX-Je1"/>
                 <outlet property="categoryView" destination="1ln-NP-6S0" id="3Iw-HK-GaV"/>
                 <outlet property="newsBannerImageView" destination="C5H-3Z-X2l" id="ZXG-kT-Y9Z"/>
                 <outlet property="newsContentView" destination="8uy-b4-adI" id="iCp-kP-PUJ"/>
@@ -24,13 +25,13 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="psy-ex-1ak" userLabel="BannerView">
-                    <rect key="frame" x="0.0" y="47" width="390" height="337.66666666666669"/>
+                    <rect key="frame" x="0.0" y="47" width="390" height="379.66666666666669"/>
                     <subviews>
                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="NewsLogo" translatesAutoresizingMaskIntoConstraints="NO" id="C5H-3Z-X2l">
-                            <rect key="frame" x="0.0" y="0.0" width="390" height="337.66666666666669"/>
+                            <rect key="frame" x="0.0" y="0.0" width="390" height="379.66666666666669"/>
                         </imageView>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8GU-z5-PQ0" userLabel="InfoView">
-                            <rect key="frame" x="0.0" y="182.66666666666666" width="390" height="99.999999999999972"/>
+                            <rect key="frame" x="0.0" y="224.66666666666669" width="390" height="100"/>
                             <subviews>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1ln-NP-6S0" userLabel="CategoryView">
                                     <rect key="frame" x="20" y="0.0" width="100" height="25"/>
@@ -54,9 +55,9 @@
                                     </constraints>
                                 </view>
                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" translatesAutoresizingMaskIntoConstraints="NO" id="X45-pR-A6b">
-                                    <rect key="frame" x="20" y="30.000000000000028" width="350" height="70"/>
+                                    <rect key="frame" x="20" y="30" width="350" height="70"/>
                                     <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8mq-em-pxT">
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8mq-em-pxT">
                                             <rect key="frame" x="0.0" y="0.0" width="350" height="44"/>
                                             <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                             <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -78,7 +79,7 @@
                                 <constraint firstAttribute="bottom" secondItem="X45-pR-A6b" secondAttribute="bottom" id="dsc-wj-oZn"/>
                                 <constraint firstItem="X45-pR-A6b" firstAttribute="top" secondItem="1ln-NP-6S0" secondAttribute="bottom" constant="5" id="ngg-9J-luw"/>
                                 <constraint firstItem="1ln-NP-6S0" firstAttribute="top" secondItem="8GU-z5-PQ0" secondAttribute="top" id="pOl-V3-n5g"/>
-                                <constraint firstAttribute="height" constant="100" id="tWS-fd-McC"/>
+                                <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="100" id="tWS-fd-McC"/>
                                 <constraint firstItem="X45-pR-A6b" firstAttribute="leading" secondItem="8GU-z5-PQ0" secondAttribute="leading" constant="20" id="w8K-YS-X5O"/>
                             </constraints>
                         </view>
@@ -95,7 +96,7 @@
                     </constraints>
                 </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8uy-b4-adI" userLabel="NewsContentView">
-                    <rect key="frame" x="0.0" y="344.66666666666674" width="390" height="465.33333333333326"/>
+                    <rect key="frame" x="0.0" y="386.66666666666674" width="390" height="423.33333333333326"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                 </view>
             </subviews>
@@ -104,7 +105,7 @@
             <constraints>
                 <constraint firstItem="psy-ex-1ak" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="7X8-0f-Fdp"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="8uy-b4-adI" secondAttribute="trailing" id="CTR-ei-Hj3"/>
-                <constraint firstItem="psy-ex-1ak" firstAttribute="height" secondItem="i5M-Pr-FkT" secondAttribute="height" multiplier="0.4" id="N4X-yW-akT"/>
+                <constraint firstItem="psy-ex-1ak" firstAttribute="height" secondItem="i5M-Pr-FkT" secondAttribute="height" multiplier="0.45" id="N4X-yW-akT"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="8uy-b4-adI" secondAttribute="bottom" id="YVT-tl-e6b"/>
                 <constraint firstItem="8uy-b4-adI" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="ao0-iv-t7w"/>
                 <constraint firstItem="psy-ex-1ak" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="hSb-Uk-shU"/>
