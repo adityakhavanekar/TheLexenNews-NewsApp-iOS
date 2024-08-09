@@ -117,6 +117,11 @@ extension HomeViewController:UITableViewDelegate,UITableViewDataSource{
         }
     }
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let detailVC = NewsDetailViewController()
+        self.navigationController?.pushViewController(detailVC, animated: true)
+    }
+    
     func numberOfSections(in tableView: UITableView) -> Int {
         return 2
     }
