@@ -9,10 +9,12 @@ import UIKit
 
 class HomeViewController: UIViewController {
 
+    @IBOutlet weak var loadingView: UIView!
     @IBOutlet weak var homeTableView: UITableView!
     @IBOutlet weak var logoImageView: UIImageView!
     
     private var viewModel = HomeViewModel()
+    private var activityIndicator:UIActivityIndicatorView = UIActivityIndicatorView()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -31,6 +33,7 @@ class HomeViewController: UIViewController {
     }
     
     private func setupUI(){
+        loadingView.isHidden = false
         setupTableView()
         logoImageView.layer.cornerRadius = 10
     }
@@ -45,14 +48,18 @@ class HomeViewController: UIViewController {
     }
     
     private func callAPI(){
+        activityIndicator = UIHelperFunctions().showActivityIndicator(in: view)
         viewModel.getEverything { bool in
             switch bool{
             case true:
                 DispatchQueue.main.async{
                     self.homeTableView.reloadData()
+                    UIHelperFunctions().hideActivityIndicator(self.activityIndicator)
+                    self.loadingView.isHidden = true
                 }
             case false:
                 print(NetworkErrors.decodingError)
+                UIHelperFunctions().hideActivityIndicator(self.activityIndicator)
             }
         }
         viewModel.getTopHeadlines { bool in
@@ -60,9 +67,12 @@ class HomeViewController: UIViewController {
             case true:
                 DispatchQueue.main.async{
                     self.homeTableView.reloadData()
+                    UIHelperFunctions().hideActivityIndicator(self.activityIndicator)
+                    self.loadingView.isHidden = true
                 }
             case false:
                 print(NetworkErrors.decodingError)
+                UIHelperFunctions().hideActivityIndicator(self.activityIndicator)
             }
         }
     }

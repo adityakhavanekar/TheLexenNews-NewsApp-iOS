@@ -10,6 +10,7 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="HomeViewController" customModule="TheLexenNews" customModuleProvider="target">
             <connections>
                 <outlet property="homeTableView" destination="S9F-Lp-GRB" id="nvh-fY-p6D"/>
+                <outlet property="loadingView" destination="UMc-m9-FEN" id="ado-cI-UbS"/>
                 <outlet property="logoImageView" destination="2Bq-7F-OjI" id="JK0-n4-WFn"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
@@ -44,19 +45,27 @@
                     <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <color key="separatorColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                 </tableView>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UMc-m9-FEN">
+                    <rect key="frame" x="0.0" y="59" width="393" height="793"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                </view>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <constraints>
+                <constraint firstItem="UMc-m9-FEN" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="3aR-6Y-dug"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="CPR-Oo-aLB" secondAttribute="trailing" id="6PJ-BC-ibP"/>
                 <constraint firstItem="CPR-Oo-aLB" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="7ia-Yb-drp"/>
+                <constraint firstItem="UMc-m9-FEN" firstAttribute="bottom" secondItem="i5M-Pr-FkT" secondAttribute="bottom" id="Mdj-Pd-PL9"/>
                 <constraint firstAttribute="bottom" secondItem="S9F-Lp-GRB" secondAttribute="bottom" id="RqF-qU-dqe"/>
                 <constraint firstItem="CPR-Oo-aLB" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="Swr-tE-WKS"/>
                 <constraint firstItem="S9F-Lp-GRB" firstAttribute="top" secondItem="CPR-Oo-aLB" secondAttribute="bottom" constant="10" id="dgP-ir-qFr"/>
                 <constraint firstItem="S9F-Lp-GRB" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="fLP-58-vw0"/>
+                <constraint firstItem="UMc-m9-FEN" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="q4F-RQ-Btf"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="S9F-Lp-GRB" secondAttribute="trailing" id="wx7-80-RlD"/>
+                <constraint firstItem="UMc-m9-FEN" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="yzG-cc-sTN"/>
             </constraints>
-            <point key="canvasLocation" x="-13" y="20"/>
+            <point key="canvasLocation" x="-14.503816793893129" y="19.718309859154932"/>
         </view>
     </objects>
     <resources>
