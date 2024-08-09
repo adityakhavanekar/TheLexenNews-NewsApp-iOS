@@ -25,7 +25,7 @@ class BreakingNewsCollectionViewCell: UICollectionViewCell {
         categoryLabelView.clipsToBounds = true
         categoryLabelView.layer.cornerRadius = 10
         DispatchQueue.main.asyncAfter(deadline: .now()+0.1){
-            UIHelperFunctions().addGradientToImageView(self.newsBannerImageView)
+            UIHelperFunctions().addGradientToImageView(self.newsBannerImageView,colors: [UIColor.clear.cgColor,UIColor.black.cgColor],locations: [0.0, 0.85, 1.0])
         }
     }
     
