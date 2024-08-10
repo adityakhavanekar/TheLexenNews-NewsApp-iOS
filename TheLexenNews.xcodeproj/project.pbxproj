@@ -36,6 +36,8 @@
 		0A4425522C6683E3009F38EB /* EverythingModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A4425512C6683E3009F38EB /* EverythingModel.swift */; };
 		0A4425592C66AEEA009F38EB /* NewsDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A4425572C66AEEA009F38EB /* NewsDetailViewController.swift */; };
 		0A44255A2C66AEEA009F38EB /* NewsDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0A4425582C66AEEA009F38EB /* NewsDetailViewController.xib */; };
+		0A4C381C2C67049900F1ADB8 /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A4C381A2C67049900F1ADB8 /* WebViewController.swift */; };
+		0A4C381D2C67049900F1ADB8 /* WebViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0A4C381B2C67049900F1ADB8 /* WebViewController.xib */; };
 		0A7D6DEB2C65405D00D80945 /* UIHelperFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A7D6DEA2C65405D00D80945 /* UIHelperFunctions.swift */; };
 		0A7D6DF02C654B3D00D80945 /* RecomendationsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0A7D6DEF2C654B3D00D80945 /* RecomendationsTableViewCell.xib */; };
 		0A7D6DF12C654B3D00D80945 /* RecomendationsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A7D6DEE2C654B3D00D80945 /* RecomendationsTableViewCell.swift */; };
@@ -94,6 +96,8 @@
 		0A4425512C6683E3009F38EB /* EverythingModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EverythingModel.swift; sourceTree = "<group>"; };
 		0A4425572C66AEEA009F38EB /* NewsDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsDetailViewController.swift; sourceTree = "<group>"; };
 		0A4425582C66AEEA009F38EB /* NewsDetailViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NewsDetailViewController.xib; sourceTree = "<group>"; };
+		0A4C381A2C67049900F1ADB8 /* WebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewController.swift; sourceTree = "<group>"; };
+		0A4C381B2C67049900F1ADB8 /* WebViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WebViewController.xib; sourceTree = "<group>"; };
 		0A7D6DEA2C65405D00D80945 /* UIHelperFunctions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIHelperFunctions.swift; sourceTree = "<group>"; };
 		0A7D6DEE2C654B3D00D80945 /* RecomendationsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecomendationsTableViewCell.swift; sourceTree = "<group>"; };
 		0A7D6DEF2C654B3D00D80945 /* RecomendationsTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RecomendationsTableViewCell.xib; sourceTree = "<group>"; };
@@ -309,6 +313,7 @@
 		0A4425542C66AE7A009F38EB /* View */ = {
 			isa = PBXGroup;
 			children = (
+				0A4C38192C67048500F1ADB8 /* WebViewController */,
 				0A4425572C66AEEA009F38EB /* NewsDetailViewController.swift */,
 				0A4425582C66AEEA009F38EB /* NewsDetailViewController.xib */,
 			);
@@ -327,6 +332,15 @@
 			children = (
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		0A4C38192C67048500F1ADB8 /* WebViewController */ = {
+			isa = PBXGroup;
+			children = (
+				0A4C381A2C67049900F1ADB8 /* WebViewController.swift */,
+				0A4C381B2C67049900F1ADB8 /* WebViewController.xib */,
+			);
+			path = WebViewController;
 			sourceTree = "<group>";
 		};
 		0A7D6DED2C654B1300D80945 /* RecomendationsTableViewCell */ = {
@@ -478,6 +492,7 @@
 				0A368AEB2C6450880085DDA7 /* BreakingNewsTableViewCell.xib in Resources */,
 				0A44255A2C66AEEA009F38EB /* NewsDetailViewController.xib in Resources */,
 				0A368ADE2C6415E50085DDA7 /* HomeViewController.xib in Resources */,
+				0A4C381D2C67049900F1ADB8 /* WebViewController.xib in Resources */,
 				0A368AAA2C63F4720085DDA7 /* Base in Resources */,
 				0A368AD92C63F52F0085DDA7 /* LaunchViewController.xib in Resources */,
 			);
@@ -607,6 +622,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0A4C381C2C67049900F1ADB8 /* WebViewController.swift in Sources */,
 				0A368AEC2C6450880085DDA7 /* BreakingNewsTableViewCell.swift in Sources */,
 				0A368AA72C63F4720085DDA7 /* ViewController.swift in Sources */,
 				0A368AF22C6451A50085DDA7 /* BreakingNewsCollectionViewCell.swift in Sources */,

@@ -25,6 +25,7 @@ class NewsDetailViewController: UIViewController {
     private var bannerUrl = ""
     private var contentTitleLabelText = ""
     private var contentLabelText = ""
+    private var newsUrl = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -54,6 +55,7 @@ class NewsDetailViewController: UIViewController {
             bannerUrl = everything?.urlToImage ?? ""
             contentLabelText = everything?.content ?? ""
             contentTitleLabelText = everything?.title ?? ""
+            newsUrl = everything?.url ?? ""
         case .topHeadlines:
             authorLabelText = top10Headlines?.author ?? ""
             newsTitleLabelText = top10Headlines?.title ?? ""
@@ -61,11 +63,19 @@ class NewsDetailViewController: UIViewController {
             bannerUrl = top10Headlines?.urlToImage ?? ""
             contentTitleLabelText = top10Headlines?.title ?? ""
             contentLabelText = top10Headlines?.content ?? ""
+            newsUrl = top10Headlines?.url ?? ""
         }
     }
     
     @IBAction func backBtnClicked(_ sender: UIButton) {
         self.navigationController?.popViewController(animated: true)
+    }
+    
+    
+    @IBAction func readStoryClicked(_ sender: UIButton) {
+        let webViewController = WebViewController()
+        webViewController.getNewsUrl(url: newsUrl)
+        self.navigationController?.pushViewController(webViewController, animated: true)
     }
     
 }
