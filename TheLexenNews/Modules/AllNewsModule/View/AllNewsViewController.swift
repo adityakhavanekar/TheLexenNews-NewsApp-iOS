@@ -9,11 +9,13 @@ import UIKit
 
 class AllNewsViewController: UIViewController {
 
+    @IBOutlet weak var newsContentTableView: UITableView!
     @IBOutlet weak var countryCollectionView: UICollectionView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         setupCountryCollectionView()
+        setupNewsContentTableVIew()
     }
     
     private func setupCountryCollectionView(){
@@ -21,6 +23,17 @@ class AllNewsViewController: UIViewController {
         countryCollectionView.delegate = self
         countryCollectionView.dataSource = self
     }
+    
+    private func setupNewsContentTableVIew(){
+        newsContentTableView.register(UINib(nibName: HomeConstants.RecomendationsTableViewCell, bundle: nil), forCellReuseIdentifier: HomeConstants.RecomendationsTableViewCell)
+        newsContentTableView.dataSource = self
+        newsContentTableView.delegate = self
+    }
+    
+    @IBAction func dismissBtnClicked(_ sender: UIButton) {
+        self.navigationController?.popViewController(animated: true)
+    }
+    
 }
 
 extension AllNewsViewController:UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout{
@@ -41,6 +54,21 @@ extension AllNewsViewController:UICollectionViewDelegate, UICollectionViewDataSo
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
-        return 5
+        return 0
+    }
+}
+
+extension AllNewsViewController: UITableViewDelegate, UITableViewDataSource{
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 10
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        guard let cell = newsContentTableView.dequeueReusableCell(withIdentifier: HomeConstants.RecomendationsTableViewCell, for: indexPath) as? RecomendationsTableViewCell else { return UITableViewCell() }
+        return cell
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 120
     }
 }
