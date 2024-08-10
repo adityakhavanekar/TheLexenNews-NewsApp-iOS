@@ -95,6 +95,7 @@ extension HomeViewController:UITableViewDelegate,UITableViewDataSource{
         switch indexPath.section{
         case 0:
             guard let cell = homeTableView.dequeueReusableCell(withIdentifier: HomeConstants.BreakingNewsTableViewCell, for: indexPath) as? BreakingNewsTableViewCell else{ return UITableViewCell() }
+            cell.delegate = self
             cell.setupViewModel(viewModel: self.viewModel)
             return cell
         case 1:
@@ -159,5 +160,13 @@ extension HomeViewController:UITableViewDelegate,UITableViewDataSource{
 
     func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
         return UIView()
+    }
+}
+
+extension HomeViewController:BreakingNewsSelectedDelegate{
+    func selectedNews(news: TopHeadlinesArticles) {
+        let detailVC = NewsDetailViewController()
+        detailVC.setupUIData(newsType: .topHeadlines,top10Headlines: news)
+        self.navigationController?.pushViewController(detailVC, animated: true)
     }
 }

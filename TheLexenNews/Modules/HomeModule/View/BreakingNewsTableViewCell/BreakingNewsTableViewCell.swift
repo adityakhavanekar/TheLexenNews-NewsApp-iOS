@@ -7,9 +7,14 @@
 
 import UIKit
 
+protocol BreakingNewsSelectedDelegate{
+    func selectedNews(news:TopHeadlinesArticles)
+}
+
 class BreakingNewsTableViewCell: UITableViewCell {
 
     @IBOutlet weak var breakingNewsCollectionView: UICollectionView!
+    var delegate: BreakingNewsSelectedDelegate?
     var viewModel:HomeViewModel? {
         didSet{
             breakingNewsCollectionView.reloadData()
@@ -55,6 +60,13 @@ extension BreakingNewsTableViewCell: UICollectionViewDelegate,UICollectionViewDa
             cell.setupData(data: data)
         }
         return cell
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        if let article = self.viewModel?.getTop5Headlines()?[indexPath.row]{
+            delegate?.selectedNews(news: article)
+        }
+        
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
