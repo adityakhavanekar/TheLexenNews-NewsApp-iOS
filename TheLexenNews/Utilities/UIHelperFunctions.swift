@@ -9,11 +9,11 @@ import Foundation
 import UIKit
 
 class UIHelperFunctions{
-    func addGradientToImageView(_ imageView: UIImageView) {
+    func addGradientToImageView(_ imageView: UIImageView,colors:[CGColor], locations:[NSNumber]) {
         let gradientLayer = CAGradientLayer()
         gradientLayer.frame = imageView.bounds
-        gradientLayer.colors = [UIColor.clear.cgColor,UIColor.black.cgColor]
-        gradientLayer.locations = [0.0, 0.85, 1.0]
+        gradientLayer.colors = colors
+        gradientLayer.locations = locations
         imageView.layer.sublayers?.filter { $0 is CAGradientLayer }.forEach { $0.removeFromSuperlayer() }
         imageView.layer.addSublayer(gradientLayer)
     }

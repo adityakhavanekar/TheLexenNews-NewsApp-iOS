@@ -27,6 +27,7 @@ class RecomendationsTableViewCell: UITableViewCell {
     func setupUI(){
         newsBannerImageView.clipsToBounds = true
         newsBannerImageView.layer.cornerRadius = 15
+        self.selectionStyle = .none
     }
     
     func setupData(data:EverythingArticle){

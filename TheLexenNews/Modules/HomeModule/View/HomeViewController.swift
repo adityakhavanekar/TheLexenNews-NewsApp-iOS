@@ -117,6 +117,20 @@ extension HomeViewController:UITableViewDelegate,UITableViewDataSource{
         }
     }
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        switch indexPath.section{
+        case 0:
+            print("")
+        case 1:
+            let detailVC = NewsDetailViewController()
+            detailVC.setupUIData(newsType: .everything,everything: viewModel.getTop5EverythingNews()?[indexPath.row])
+            self.navigationController?.pushViewController(detailVC, animated: true)
+        default:
+            print("")
+        }
+        
+    }
+    
     func numberOfSections(in tableView: UITableView) -> Int {
         return 2
     }
