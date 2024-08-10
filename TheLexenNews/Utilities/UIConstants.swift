@@ -19,3 +19,7 @@ enum TypeOfNews{
     case everything
     case topHeadlines
 }
+
+struct AllNewsConstants{
+    static let CountryCollectionVIewCell = "CountryCollectionVIewCell"
+}
