@@ -14,6 +14,7 @@ protocol BreakingNewsSelectedDelegate{
 class BreakingNewsTableViewCell: UITableViewCell {
 
     @IBOutlet weak var breakingNewsCollectionView: UICollectionView!
+    
     var delegate: BreakingNewsSelectedDelegate?
     var viewModel:HomeViewModel? {
         didSet{
