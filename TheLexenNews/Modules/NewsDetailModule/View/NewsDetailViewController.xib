@@ -127,14 +127,22 @@
                             <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <nil key="highlightedColor"/>
                         </label>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hl9-uA-PZ7">
+                            <rect key="frame" x="20" y="109.33333333333331" width="350" height="30"/>
+                            <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                            <state key="normal" title="Read full story"/>
+                        </button>
                     </subviews>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
+                        <constraint firstAttribute="trailing" secondItem="hl9-uA-PZ7" secondAttribute="trailing" constant="20" id="4CE-M5-FtN"/>
                         <constraint firstAttribute="trailing" secondItem="xdN-Y1-vEe" secondAttribute="trailing" constant="20" id="BnW-0M-m78"/>
                         <constraint firstAttribute="trailing" secondItem="j7T-y4-M73" secondAttribute="trailing" constant="20" id="Cwa-iM-pNd"/>
+                        <constraint firstItem="hl9-uA-PZ7" firstAttribute="leading" secondItem="8uy-b4-adI" secondAttribute="leading" constant="20" id="HrT-nR-3dP"/>
                         <constraint firstItem="xdN-Y1-vEe" firstAttribute="top" secondItem="8uy-b4-adI" secondAttribute="top" constant="35" id="JoU-Vp-YHK"/>
                         <constraint firstItem="xdN-Y1-vEe" firstAttribute="leading" secondItem="8uy-b4-adI" secondAttribute="leading" constant="20" id="Tzh-lj-64T"/>
                         <constraint firstItem="j7T-y4-M73" firstAttribute="top" secondItem="xdN-Y1-vEe" secondAttribute="bottom" constant="20" id="VI7-H7-H8G"/>
+                        <constraint firstItem="hl9-uA-PZ7" firstAttribute="top" secondItem="j7T-y4-M73" secondAttribute="bottom" constant="10" id="cWP-JR-IyM"/>
                         <constraint firstItem="j7T-y4-M73" firstAttribute="leading" secondItem="8uy-b4-adI" secondAttribute="leading" constant="20" id="dmS-fB-UGt"/>
                     </constraints>
                 </view>
