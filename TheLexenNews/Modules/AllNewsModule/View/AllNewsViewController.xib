@@ -31,45 +31,47 @@
                         <action selector="dismissBtnClicked:" destination="-1" eventType="touchUpInside" id="RYU-66-RiP"/>
                     </connections>
                 </button>
-                <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="yh7-0y-Pik">
-                    <rect key="frame" x="5" y="159" width="383" height="25"/>
-                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                    <constraints>
-                        <constraint firstAttribute="height" constant="25" id="2ik-hP-MrZ"/>
-                    </constraints>
-                    <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="AZx-Is-aOO">
-                        <size key="itemSize" width="128" height="128"/>
-                        <size key="headerReferenceSize" width="0.0" height="0.0"/>
-                        <size key="footerReferenceSize" width="0.0" height="0.0"/>
-                        <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
-                    </collectionViewFlowLayout>
-                </collectionView>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Discover" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mVc-sg-dmL">
                     <rect key="frame" x="20" y="109" width="353" height="30"/>
                     <fontDescription key="fontDescription" type="boldSystem" pointSize="25"/>
                     <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" estimatedSectionHeaderHeight="-1" sectionFooterHeight="28" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="zMd-Ps-XnX">
-                    <rect key="frame" x="0.0" y="194" width="393" height="658"/>
-                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                </tableView>
+                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="IUD-wf-WtM">
+                    <rect key="frame" x="0.0" y="159" width="393" height="693"/>
+                    <subviews>
+                        <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="yh7-0y-Pik">
+                            <rect key="frame" x="0.0" y="0.0" width="393" height="25"/>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="25" id="2ik-hP-MrZ"/>
+                            </constraints>
+                            <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="AZx-Is-aOO">
+                                <size key="itemSize" width="128" height="128"/>
+                                <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                            </collectionViewFlowLayout>
+                        </collectionView>
+                        <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" estimatedSectionHeaderHeight="-1" sectionFooterHeight="28" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="zMd-Ps-XnX">
+                            <rect key="frame" x="0.0" y="35" width="393" height="658"/>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </tableView>
+                    </subviews>
+                </stackView>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <constraints>
-                <constraint firstItem="yh7-0y-Pik" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="5" id="0kc-FF-SJr"/>
-                <constraint firstItem="yh7-0y-Pik" firstAttribute="top" secondItem="mVc-sg-dmL" secondAttribute="bottom" constant="20" id="5jR-0D-yAe"/>
-                <constraint firstItem="zMd-Ps-XnX" firstAttribute="top" secondItem="yh7-0y-Pik" secondAttribute="bottom" constant="10" id="8M8-tT-bo7"/>
-                <constraint firstItem="zMd-Ps-XnX" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="AFg-pp-a1Y"/>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="yh7-0y-Pik" secondAttribute="trailing" constant="5" id="PnN-mg-EMx"/>
+                <constraint firstItem="IUD-wf-WtM" firstAttribute="top" secondItem="mVc-sg-dmL" secondAttribute="bottom" constant="20" id="9hS-YO-QCQ"/>
                 <constraint firstItem="mVc-sg-dmL" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="R0b-6a-ffg"/>
+                <constraint firstAttribute="bottom" secondItem="IUD-wf-WtM" secondAttribute="bottom" id="SF4-Xa-VVa"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="mVc-sg-dmL" secondAttribute="trailing" constant="20" id="a6t-xS-FU2"/>
-                <constraint firstAttribute="bottom" secondItem="zMd-Ps-XnX" secondAttribute="bottom" id="a81-kR-8PP"/>
+                <constraint firstAttribute="trailing" secondItem="IUD-wf-WtM" secondAttribute="trailing" id="j47-Mt-UgZ"/>
+                <constraint firstItem="IUD-wf-WtM" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="kJx-Xw-E2p"/>
                 <constraint firstItem="mVc-sg-dmL" firstAttribute="top" secondItem="a6t-zD-7YG" secondAttribute="bottom" constant="20" id="lBQ-ng-UgY"/>
                 <constraint firstItem="a6t-zD-7YG" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="qWg-ex-tZB"/>
                 <constraint firstItem="a6t-zD-7YG" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="uxG-Hg-xeT"/>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="zMd-Ps-XnX" secondAttribute="trailing" id="vtd-t7-YNp"/>
             </constraints>
             <point key="canvasLocation" x="28" y="20"/>
         </view>
