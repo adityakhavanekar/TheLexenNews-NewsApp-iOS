@@ -224,6 +224,22 @@ extension AllNewsViewController: UITableViewDelegate, UITableViewDataSource{
         return cell
     }
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let vc = NewsDetailViewController()
+        switch typeOfNews{
+        case .everything:
+            if let article = viewModel.getEverythingArray()?[indexPath.row]{
+                vc.setupUIData(newsType: .everything, everything: article, top10Headlines: nil)
+            }
+            
+        case .topHeadlines:
+            if let article = viewModel.getTopNews()?[indexPath.row]{
+                vc.setupUIData(newsType: .topHeadlines, everything: nil, top10Headlines: article)
+            }
+        }
+        self.navigationController?.pushViewController(vc, animated: true)
+    }
+    
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 120
     }
