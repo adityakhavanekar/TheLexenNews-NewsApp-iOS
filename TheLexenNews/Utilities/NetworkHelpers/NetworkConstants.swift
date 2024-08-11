@@ -71,11 +71,23 @@ enum APICountryParams{
 enum APIParams{
     
     case keyword
+    case politics
+    case sports
+    case education
+    case gaming
     
     var value:[String:String]{
         switch self{
         case .keyword:
             return ["q":"keyword"]
+        case .politics:
+            return ["q":"politics"]
+        case .sports:
+            return ["q":"sports"]
+        case .education:
+            return ["q":"education"]
+        case .gaming:
+            return ["q":"gaming"]
         }
     }
     

@@ -11,7 +11,8 @@ class AllNewsViewModel{
     
     private var topHeadlines:TopHeadlinesModel?
     private var everything:EverythingModel?
-    var countries:[String] = [Constants.any,Constants.countryUs,Constants.countryIndia,Constants.countryGermany,Constants.countryChina]
+    private var countries:[String] = [Constants.any,Constants.countryUs,Constants.countryIndia,Constants.countryGermany,Constants.countryChina]
+    private var everythingKeywords = [Constants.all,Constants.politics,Constants.sports,Constants.education,Constants.gaming]
     
     func getTopHeadlines(country:APICountryParams,completion:@escaping (Bool) -> ()){
         NetworkManager.shared.request(url: APIEndpoints.topHeadlines.url, method: .get, params: country.value, headers: APIHeaders.authorization.value, body: nil, bodyType: .json) { result in
@@ -34,8 +35,8 @@ class AllNewsViewModel{
         }
     }
     
-    func getEverything(completion:@escaping (Bool) -> ()){
-        NetworkManager.shared.request(url: APIEndpoints.everything.url, method: .get, params: APIParams.keyword.value, headers: APIHeaders.authorization.value, body: nil, bodyType: .json) { result in
+    func getEverything(keyword:APIParams,completion:@escaping (Bool) -> ()){
+        NetworkManager.shared.request(url: APIEndpoints.everything.url, method: .get, params: keyword.value, headers: APIHeaders.authorization.value, body: nil, bodyType: .json) { result in
             switch result{
             case .success(let data):
                 do{
@@ -63,5 +64,9 @@ class AllNewsViewModel{
     
     func getCountries() -> [String] {
         return countries
+    }
+    
+    func getKeywords() -> [String] {
+        return everythingKeywords
     }
 }

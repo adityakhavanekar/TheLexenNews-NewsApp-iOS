@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="32700.99.1234" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22685"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -38,10 +39,10 @@
                     <nil key="highlightedColor"/>
                 </label>
                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="IUD-wf-WtM">
-                    <rect key="frame" x="0.0" y="159" width="393" height="693"/>
+                    <rect key="frame" x="5" y="159" width="383" height="693"/>
                     <subviews>
                         <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="yh7-0y-Pik">
-                            <rect key="frame" x="0.0" y="0.0" width="393" height="25"/>
+                            <rect key="frame" x="0.0" y="0.0" width="383" height="25"/>
                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="25" id="2ik-hP-MrZ"/>
@@ -54,7 +55,7 @@
                             </collectionViewFlowLayout>
                         </collectionView>
                         <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" estimatedSectionHeaderHeight="-1" sectionFooterHeight="28" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="zMd-Ps-XnX">
-                            <rect key="frame" x="0.0" y="35" width="393" height="658"/>
+                            <rect key="frame" x="0.0" y="35" width="383" height="658"/>
                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         </tableView>
                     </subviews>
@@ -67,8 +68,8 @@
                 <constraint firstItem="mVc-sg-dmL" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="R0b-6a-ffg"/>
                 <constraint firstAttribute="bottom" secondItem="IUD-wf-WtM" secondAttribute="bottom" id="SF4-Xa-VVa"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="mVc-sg-dmL" secondAttribute="trailing" constant="20" id="a6t-xS-FU2"/>
-                <constraint firstAttribute="trailing" secondItem="IUD-wf-WtM" secondAttribute="trailing" id="j47-Mt-UgZ"/>
-                <constraint firstItem="IUD-wf-WtM" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="kJx-Xw-E2p"/>
+                <constraint firstAttribute="trailing" secondItem="IUD-wf-WtM" secondAttribute="trailing" constant="5" id="j47-Mt-UgZ"/>
+                <constraint firstItem="IUD-wf-WtM" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="5" id="kJx-Xw-E2p"/>
                 <constraint firstItem="mVc-sg-dmL" firstAttribute="top" secondItem="a6t-zD-7YG" secondAttribute="bottom" constant="20" id="lBQ-ng-UgY"/>
                 <constraint firstItem="a6t-zD-7YG" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="qWg-ex-tZB"/>
                 <constraint firstItem="a6t-zD-7YG" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="uxG-Hg-xeT"/>

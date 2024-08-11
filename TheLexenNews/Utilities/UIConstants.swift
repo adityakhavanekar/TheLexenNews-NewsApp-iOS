@@ -23,6 +23,13 @@ struct Constants{
     static let countryIndia = "India"
     static let countryGermany = "Germany"
     static let countryChina = "China"
+    
+//    KEYWORDS
+    static let all = "All"
+    static let politics = "Politics"
+    static let sports = "Sports"
+    static let education = "Education"
+    static let gaming = "Gaming"
 }
 
 enum TypeOfNews{
