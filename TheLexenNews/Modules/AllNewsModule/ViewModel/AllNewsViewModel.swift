@@ -11,7 +11,7 @@ class AllNewsViewModel{
     
     private var topHeadlines:TopHeadlinesModel?
     private var everything:EverythingModel?
-    var countries:[String] = ["Any","United States","India","Germany","China"]
+    var countries:[String] = [Constants.any,Constants.countryUs,Constants.countryIndia,Constants.countryGermany,Constants.countryChina]
     
     func getTopHeadlines(country:APICountryParams,completion:@escaping (Bool) -> ()){
         NetworkManager.shared.request(url: APIEndpoints.topHeadlines.url, method: .get, params: country.value, headers: APIHeaders.authorization.value, body: nil, bodyType: .json) { result in
@@ -59,5 +59,9 @@ class AllNewsViewModel{
     
     func getTopNews() -> [TopHeadlinesArticles]? {
         return topHeadlines?.articles
+    }
+    
+    func getCountries() -> [String] {
+        return countries
     }
 }

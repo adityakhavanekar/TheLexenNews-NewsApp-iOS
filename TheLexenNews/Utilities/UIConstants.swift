@@ -16,6 +16,13 @@ struct Constants{
     static let CountryCollectionVIewCell = "CountryCollectionVIewCell"
     
     static let recomendations = "Recomendations"
+    
+//    COUNTRY
+    static let any = "Any"
+    static let countryUs = "United States"
+    static let countryIndia = "India"
+    static let countryGermany = "Germany"
+    static let countryChina = "China"
 }
 
 enum TypeOfNews{
