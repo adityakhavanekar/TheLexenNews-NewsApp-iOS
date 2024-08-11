@@ -101,7 +101,7 @@ extension HomeViewController:UITableViewDelegate,UITableViewDataSource{
         case 1:
             guard let cell = homeTableView.dequeueReusableCell(withIdentifier: HomeConstants.RecomendationsTableViewCell, for: indexPath) as? RecomendationsTableViewCell else{ return UITableViewCell() }
             if let data = viewModel.getTop5EverythingNews()?[indexPath.row]{
-                cell.setupData(data: data)
+                cell.setupData(typeOfNews: .everything, everythingData: data, topHeadlinesData: nil)
             }
             return cell
         default:
@@ -121,8 +121,7 @@ extension HomeViewController:UITableViewDelegate,UITableViewDataSource{
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         switch indexPath.section{
         case 0:
-            let vc = AllNewsViewController()
-            self.navigationController?.pushViewController(vc, animated: true)
+            print("")
         case 1:
             let detailVC = NewsDetailViewController()
             detailVC.setupUIData(newsType: .everything,everything: viewModel.getTop5EverythingNews()?[indexPath.row])
@@ -141,10 +140,14 @@ extension HomeViewController:UITableViewDelegate,UITableViewDataSource{
         switch section{
         case 0:
             let view = Bundle.main.loadNibNamed(HomeConstants.BreakingNewsHeaderTableViewCell, owner: self)?.first as? BreakingNewsHeaderTableViewCell
+            view?.typeOfNews = .topHeadlines
+            view?.delegate = self
             return view
         case 1:
             let view = Bundle.main.loadNibNamed(HomeConstants.BreakingNewsHeaderTableViewCell, owner: self)?.first as? BreakingNewsHeaderTableViewCell
             view?.headerLabel.text = HomeConstants.recomendations
+            view?.typeOfNews = .everything
+            view?.delegate = self
             return view
         default:
             return nil
@@ -169,5 +172,18 @@ extension HomeViewController:BreakingNewsSelectedDelegate{
         let detailVC = NewsDetailViewController()
         detailVC.setupUIData(newsType: .topHeadlines,top10Headlines: news)
         self.navigationController?.pushViewController(detailVC, animated: true)
+    }
+}
+
+extension HomeViewController:HeaderTableViewCellDelegate{
+    func viewAllClicked(newsType: TypeOfNews) {
+        switch newsType{
+        case .everything:
+            let vc = AllNewsViewController(typeOfNews: .everything)
+            self.navigationController?.pushViewController(vc, animated: true)
+        case .topHeadlines:
+            let vc = AllNewsViewController(typeOfNews: .topHeadlines)
+            self.navigationController?.pushViewController(vc, animated: true)
+        }
     }
 }

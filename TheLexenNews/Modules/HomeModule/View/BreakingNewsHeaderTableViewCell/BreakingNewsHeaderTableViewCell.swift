@@ -7,9 +7,16 @@
 
 import UIKit
 
+protocol HeaderTableViewCellDelegate{
+    func viewAllClicked(newsType:TypeOfNews)
+}
+
 class BreakingNewsHeaderTableViewCell: UITableViewCell {
 
     @IBOutlet weak var headerLabel: UILabel!
+    
+    var typeOfNews:TypeOfNews?
+    var delegate:HeaderTableViewCellDelegate?
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -19,4 +26,9 @@ class BreakingNewsHeaderTableViewCell: UITableViewCell {
         super.setSelected(selected, animated: animated)
     }
     
+    @IBAction func viewAllCliked(_ sender: UIButton) {
+        if let typeOfNews = self.typeOfNews{
+            delegate?.viewAllClicked(newsType: typeOfNews)
+        }
+    }
 }

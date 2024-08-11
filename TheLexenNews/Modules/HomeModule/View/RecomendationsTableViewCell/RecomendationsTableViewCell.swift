@@ -30,10 +30,18 @@ class RecomendationsTableViewCell: UITableViewCell {
         self.selectionStyle = .none
     }
     
-    func setupData(data:EverythingArticle){
-        newsAuthorLabel.text = data.author
-        newsTitleLabel.text = data.title
-        sourceNameLabel.text = data.source?.name
-        newsBannerImageView.sd_setImage(with: URL(string: data.urlToImage ?? ""))
+    func setupData(typeOfNews:TypeOfNews,everythingData:EverythingArticle?,topHeadlinesData:TopHeadlinesArticles?){
+        switch typeOfNews{
+        case .everything:
+            newsAuthorLabel.text = everythingData?.author
+            newsTitleLabel.text = everythingData?.title
+            sourceNameLabel.text = everythingData?.source?.name
+            newsBannerImageView.sd_setImage(with: URL(string: everythingData?.urlToImage ?? ""))
+        case .topHeadlines:
+            newsAuthorLabel.text = topHeadlinesData?.author
+            newsTitleLabel.text = topHeadlinesData?.title
+            sourceNameLabel.text = topHeadlinesData?.source?.name?.rawValue
+            newsBannerImageView.sd_setImage(with: URL(string: topHeadlinesData?.urlToImage ?? ""))
+        }
     }
 }

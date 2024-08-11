@@ -34,6 +34,9 @@
                         <state key="normal" title="View all">
                             <color key="titleColor" systemColor="systemBlueColor"/>
                         </state>
+                        <connections>
+                            <action selector="viewAllCliked:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="UXu-D2-EkS"/>
+                        </connections>
                     </button>
                 </subviews>
                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
