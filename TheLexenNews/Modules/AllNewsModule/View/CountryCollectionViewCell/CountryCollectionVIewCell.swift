@@ -12,6 +12,12 @@ class CountryCollectionVIewCell: UICollectionViewCell {
     @IBOutlet weak var mainView: UIView!
     @IBOutlet weak var countryNameLabel: UILabel!
     
+    var countryNameText:String = ""{
+        didSet{
+            self.countryNameLabel.text = countryNameText
+        }
+    }
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         setupUI()

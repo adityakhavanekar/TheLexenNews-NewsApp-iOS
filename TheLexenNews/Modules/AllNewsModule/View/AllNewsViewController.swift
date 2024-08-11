@@ -11,9 +11,11 @@ class AllNewsViewController: UIViewController {
 
     @IBOutlet weak var newsContentTableView: UITableView!
     @IBOutlet weak var countryCollectionView: UICollectionView!
+    private var activityIndicator:UIActivityIndicatorView = UIActivityIndicatorView()
     
     var typeOfNews:TypeOfNews
     var viewModel:AllNewsViewModel = AllNewsViewModel()
+    
     
     init(typeOfNews: TypeOfNews) {
         self.typeOfNews = typeOfNews
@@ -32,9 +34,14 @@ class AllNewsViewController: UIViewController {
     }
     
     private func setupCountryCollectionView(){
-        countryCollectionView.register(UINib(nibName: AllNewsConstants.CountryCollectionVIewCell, bundle: nil), forCellWithReuseIdentifier: AllNewsConstants.CountryCollectionVIewCell)
-        countryCollectionView.delegate = self
-        countryCollectionView.dataSource = self
+        switch typeOfNews {
+        case .everything:
+            countryCollectionView.isHidden = true
+        case .topHeadlines:
+            countryCollectionView.register(UINib(nibName: AllNewsConstants.CountryCollectionVIewCell, bundle: nil), forCellWithReuseIdentifier: AllNewsConstants.CountryCollectionVIewCell)
+            countryCollectionView.delegate = self
+            countryCollectionView.dataSource = self
+        }
     }
     
     private func setupNewsContentTableVIew(){
@@ -44,6 +51,7 @@ class AllNewsViewController: UIViewController {
     }
     
     private func CallAPI(){
+        activityIndicator = UIHelperFunctions().showActivityIndicator(in: view)
         switch self.typeOfNews {
         case .everything:
             viewModel.getEverything { bool in
@@ -51,19 +59,23 @@ class AllNewsViewController: UIViewController {
                 case true:
                     DispatchQueue.main.async{
                         self.newsContentTableView.reloadData()
+                        UIHelperFunctions().hideActivityIndicator(self.activityIndicator)
                     }
                 case false:
+                    UIHelperFunctions().hideActivityIndicator(self.activityIndicator)
                     print("Error getting the data")
                 }
             }
         case .topHeadlines:
-            viewModel.getTopHeadlines { bool in
+            viewModel.getTopHeadlines(country: .countryUS) { bool in
                 switch bool{
                 case true:
                     DispatchQueue.main.async{
                         self.newsContentTableView.reloadData()
+                        UIHelperFunctions().hideActivityIndicator(self.activityIndicator)
                     }
                 case false:
+                    UIHelperFunctions().hideActivityIndicator(self.activityIndicator)
                     print("Error getting the data")
                 }
                 
@@ -80,12 +92,99 @@ class AllNewsViewController: UIViewController {
 extension AllNewsViewController:UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout{
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 5
+        return viewModel.countries.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = countryCollectionView.dequeueReusableCell(withReuseIdentifier: AllNewsConstants.CountryCollectionVIewCell, for: indexPath) as? CountryCollectionVIewCell else {return UICollectionViewCell()}
+        cell.countryNameText = viewModel.countries[indexPath.row]
         return cell
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let cell = collectionView.cellForItem(at: indexPath) as? CountryCollectionVIewCell
+        cell?.mainView.backgroundColor = .systemBlue
+        cell?.countryNameLabel.textColor = .white
+        switch indexPath.row{
+        case 0:
+            activityIndicator = UIHelperFunctions().showActivityIndicator(in: view)
+            viewModel.getTopHeadlines(country: .countryUS) { bool in
+                switch bool{
+                case true:
+                    DispatchQueue.main.async {
+                        self.newsContentTableView.reloadData()
+                        UIHelperFunctions().hideActivityIndicator(self.activityIndicator)
+                    }
+                case false:
+                    print("Error")
+                    UIHelperFunctions().hideActivityIndicator(self.activityIndicator)
+                }
+            }
+        case 1:
+            activityIndicator = UIHelperFunctions().showActivityIndicator(in: view)
+            viewModel.getTopHeadlines(country: .countryUS) { bool in
+                switch bool{
+                case true:
+                    DispatchQueue.main.async {
+                        self.newsContentTableView.reloadData()
+                        UIHelperFunctions().hideActivityIndicator(self.activityIndicator)
+                    }
+                case false:
+                    print("Error")
+                    UIHelperFunctions().hideActivityIndicator(self.activityIndicator)
+                }
+            }
+        case 2:
+            activityIndicator = UIHelperFunctions().showActivityIndicator(in: view)
+            viewModel.getTopHeadlines(country: .countryIndia) { bool in
+                switch bool{
+                case true:
+                    DispatchQueue.main.async {
+                        self.newsContentTableView.reloadData()
+                        UIHelperFunctions().hideActivityIndicator(self.activityIndicator)
+                    }
+                case false:
+                    print("Error")
+                    UIHelperFunctions().hideActivityIndicator(self.activityIndicator)
+                }
+            }
+        case 3:
+            activityIndicator = UIHelperFunctions().showActivityIndicator(in: view)
+            viewModel.getTopHeadlines(country: .countryGermany) { bool in
+                switch bool{
+                case true:
+                    DispatchQueue.main.async {
+                        self.newsContentTableView.reloadData()
+                        UIHelperFunctions().hideActivityIndicator(self.activityIndicator)
+                    }
+                case false:
+                    print("Error")
+                    UIHelperFunctions().hideActivityIndicator(self.activityIndicator)
+                }
+            }
+        case 4:
+            activityIndicator = UIHelperFunctions().showActivityIndicator(in: view)
+            viewModel.getTopHeadlines(country: .CountryChina) { bool in
+                switch bool{
+                case true:
+                    DispatchQueue.main.async {
+                        self.newsContentTableView.reloadData()
+                        UIHelperFunctions().hideActivityIndicator(self.activityIndicator)
+                    }
+                case false:
+                    print("Error")
+                    UIHelperFunctions().hideActivityIndicator(self.activityIndicator)
+                }
+            }
+        default:
+            print("")
+        }
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didDeselectItemAt indexPath: IndexPath) {
+        let cell = collectionView.cellForItem(at: indexPath) as? CountryCollectionVIewCell
+        cell?.mainView.backgroundColor = UIColor(hex: "#C1C1C1")
+        cell?.countryNameLabel.textColor = .darkGray
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {

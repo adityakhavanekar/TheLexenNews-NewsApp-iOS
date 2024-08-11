@@ -50,11 +50,20 @@ enum APIHeaders {
 enum APICountryParams{
     
     case countryUS
+    case countryIndia
+    case countryGermany
+    case CountryChina
     
     var value:[String:String]{
         switch self{
         case .countryUS:
             return ["country":"us"]
+        case .countryIndia:
+            return ["country":"in"]
+        case .countryGermany:
+            return ["country":"de"]
+        case .CountryChina:
+            return ["country":"cn"]
         }
     }
 }
