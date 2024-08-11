@@ -11,6 +11,7 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="AllNewsViewController" customModule="TheLexenNews" customModuleProvider="target">
             <connections>
                 <outlet property="countryCollectionView" destination="yh7-0y-Pik" id="DBF-cJ-xn6"/>
+                <outlet property="headerTitleLabel" destination="mVc-sg-dmL" id="joU-Mr-6oF"/>
                 <outlet property="newsContentTableView" destination="zMd-Ps-XnX" id="Tf1-b3-VA4"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>

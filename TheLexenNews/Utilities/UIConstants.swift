@@ -16,6 +16,7 @@ struct Constants{
     static let CountryCollectionVIewCell = "CountryCollectionVIewCell"
     
     static let recomendations = "Recomendations"
+    static let trending = "Trending"
     
 //    COUNTRY
     static let any = "Any"

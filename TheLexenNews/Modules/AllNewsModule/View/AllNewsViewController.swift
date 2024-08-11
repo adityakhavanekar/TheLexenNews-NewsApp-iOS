@@ -9,6 +9,7 @@ import UIKit
 
 class AllNewsViewController: UIViewController {
 
+    @IBOutlet weak var headerTitleLabel: UILabel!
     @IBOutlet weak var newsContentTableView: UITableView!
     @IBOutlet weak var countryCollectionView: UICollectionView!
     private var activityIndicator:UIActivityIndicatorView = UIActivityIndicatorView()
@@ -28,18 +29,19 @@ class AllNewsViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        setupUI()
         setupCountryCollectionView()
         setupNewsContentTableVIew()
         CallAPI()
     }
     
     private func setupUI(){
-//        switch typeOfNews {
-//        case .everything:
-//            <#code#>
-//        case .topHeadlines:
-//            <#code#>
-//        }
+        switch typeOfNews {
+        case .everything:
+            headerTitleLabel.text = Constants.recomendations
+        case .topHeadlines:
+            headerTitleLabel.text = Constants.trending
+        }
     }
     
     private func setupCountryCollectionView(){
@@ -278,6 +280,8 @@ extension AllNewsViewController:UICollectionViewDelegate, UICollectionViewDataSo
                 print("")
             }
         }
+        let topIndexPath = IndexPath(row: 0, section: 0)
+        self.newsContentTableView.scrollToRow(at: topIndexPath, at: .top, animated: true)
     }
     
     func collectionView(_ collectionView: UICollectionView, didDeselectItemAt indexPath: IndexPath) {
