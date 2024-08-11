@@ -33,7 +33,7 @@ class BreakingNewsTableViewCell: UITableViewCell {
     }
     
     func setupCollectionView(){
-        breakingNewsCollectionView.register(UINib(nibName: HomeConstants.BreakingNewsCollectionViewCell, bundle: nil), forCellWithReuseIdentifier: HomeConstants.BreakingNewsCollectionViewCell)
+        breakingNewsCollectionView.register(UINib(nibName: Constants.BreakingNewsCollectionViewCell, bundle: nil), forCellWithReuseIdentifier: Constants.BreakingNewsCollectionViewCell)
         breakingNewsCollectionView.layer.cornerRadius = 10
         breakingNewsCollectionView.dataSource = self
         breakingNewsCollectionView.delegate = self
@@ -53,7 +53,7 @@ extension BreakingNewsTableViewCell: UICollectionViewDelegate,UICollectionViewDa
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        guard let cell = breakingNewsCollectionView.dequeueReusableCell(withReuseIdentifier: HomeConstants.BreakingNewsCollectionViewCell, for: indexPath) as?  BreakingNewsCollectionViewCell
+        guard let cell = breakingNewsCollectionView.dequeueReusableCell(withReuseIdentifier: Constants.BreakingNewsCollectionViewCell, for: indexPath) as?  BreakingNewsCollectionViewCell
         else{
             return UICollectionViewCell()
         }

@@ -38,14 +38,14 @@ class AllNewsViewController: UIViewController {
         case .everything:
             countryCollectionView.isHidden = true
         case .topHeadlines:
-            countryCollectionView.register(UINib(nibName: AllNewsConstants.CountryCollectionVIewCell, bundle: nil), forCellWithReuseIdentifier: AllNewsConstants.CountryCollectionVIewCell)
+            countryCollectionView.register(UINib(nibName: Constants.CountryCollectionVIewCell, bundle: nil), forCellWithReuseIdentifier: Constants.CountryCollectionVIewCell)
             countryCollectionView.delegate = self
             countryCollectionView.dataSource = self
         }
     }
     
     private func setupNewsContentTableVIew(){
-        newsContentTableView.register(UINib(nibName: HomeConstants.RecomendationsTableViewCell, bundle: nil), forCellReuseIdentifier: HomeConstants.RecomendationsTableViewCell)
+        newsContentTableView.register(UINib(nibName: Constants.RecomendationsTableViewCell, bundle: nil), forCellReuseIdentifier: Constants.RecomendationsTableViewCell)
         newsContentTableView.dataSource = self
         newsContentTableView.delegate = self
     }
@@ -96,7 +96,7 @@ extension AllNewsViewController:UICollectionViewDelegate, UICollectionViewDataSo
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        guard let cell = countryCollectionView.dequeueReusableCell(withReuseIdentifier: AllNewsConstants.CountryCollectionVIewCell, for: indexPath) as? CountryCollectionVIewCell else {return UICollectionViewCell()}
+        guard let cell = countryCollectionView.dequeueReusableCell(withReuseIdentifier: Constants.CountryCollectionVIewCell, for: indexPath) as? CountryCollectionVIewCell else {return UICollectionViewCell()}
         cell.countryNameText = viewModel.countries[indexPath.row]
         return cell
     }
@@ -209,7 +209,7 @@ extension AllNewsViewController: UITableViewDelegate, UITableViewDataSource{
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = newsContentTableView.dequeueReusableCell(withIdentifier: HomeConstants.RecomendationsTableViewCell, for: indexPath) as? RecomendationsTableViewCell else { return UITableViewCell() }
+        guard let cell = newsContentTableView.dequeueReusableCell(withIdentifier: Constants.RecomendationsTableViewCell, for: indexPath) as? RecomendationsTableViewCell else { return UITableViewCell() }
         
         switch self.typeOfNews{
         case .everything:

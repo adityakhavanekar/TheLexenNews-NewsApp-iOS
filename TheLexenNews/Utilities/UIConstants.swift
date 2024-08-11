@@ -7,19 +7,18 @@
 
 import Foundation
 
-struct HomeConstants{
+struct Constants{
+//    CELLS
     static let BreakingNewsHeaderTableViewCell = "BreakingNewsHeaderTableViewCell"
     static let BreakingNewsTableViewCell = "BreakingNewsTableViewCell"
     static let BreakingNewsCollectionViewCell = "BreakingNewsCollectionViewCell"
     static let RecomendationsTableViewCell = "RecomendationsTableViewCell"
+    static let CountryCollectionVIewCell = "CountryCollectionVIewCell"
+    
     static let recomendations = "Recomendations"
 }
 
 enum TypeOfNews{
     case everything
     case topHeadlines
-}
-
-struct AllNewsConstants{
-    static let CountryCollectionVIewCell = "CountryCollectionVIewCell"
 }

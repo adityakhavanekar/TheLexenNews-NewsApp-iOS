@@ -39,9 +39,9 @@ class HomeViewController: UIViewController {
     }
     
     private func setupTableView(){
-        homeTableView.register(UINib(nibName: HomeConstants.BreakingNewsHeaderTableViewCell, bundle: nil), forCellReuseIdentifier: HomeConstants.BreakingNewsHeaderTableViewCell)
-        homeTableView.register(UINib(nibName: HomeConstants.BreakingNewsTableViewCell, bundle: nil), forCellReuseIdentifier: HomeConstants.BreakingNewsTableViewCell)
-        homeTableView.register(UINib(nibName: HomeConstants.RecomendationsTableViewCell, bundle: nil), forCellReuseIdentifier: HomeConstants.RecomendationsTableViewCell)
+        homeTableView.register(UINib(nibName: Constants.BreakingNewsHeaderTableViewCell, bundle: nil), forCellReuseIdentifier: Constants.BreakingNewsHeaderTableViewCell)
+        homeTableView.register(UINib(nibName: Constants.BreakingNewsTableViewCell, bundle: nil), forCellReuseIdentifier: Constants.BreakingNewsTableViewCell)
+        homeTableView.register(UINib(nibName: Constants.RecomendationsTableViewCell, bundle: nil), forCellReuseIdentifier: Constants.RecomendationsTableViewCell)
         homeTableView.separatorColor = .clear
         homeTableView.dataSource = self
         homeTableView.delegate = self
@@ -94,12 +94,12 @@ extension HomeViewController:UITableViewDelegate,UITableViewDataSource{
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         switch indexPath.section{
         case 0:
-            guard let cell = homeTableView.dequeueReusableCell(withIdentifier: HomeConstants.BreakingNewsTableViewCell, for: indexPath) as? BreakingNewsTableViewCell else{ return UITableViewCell() }
+            guard let cell = homeTableView.dequeueReusableCell(withIdentifier: Constants.BreakingNewsTableViewCell, for: indexPath) as? BreakingNewsTableViewCell else{ return UITableViewCell() }
             cell.delegate = self
             cell.setupViewModel(viewModel: self.viewModel)
             return cell
         case 1:
-            guard let cell = homeTableView.dequeueReusableCell(withIdentifier: HomeConstants.RecomendationsTableViewCell, for: indexPath) as? RecomendationsTableViewCell else{ return UITableViewCell() }
+            guard let cell = homeTableView.dequeueReusableCell(withIdentifier: Constants.RecomendationsTableViewCell, for: indexPath) as? RecomendationsTableViewCell else{ return UITableViewCell() }
             if let data = viewModel.getTop5EverythingNews()?[indexPath.row]{
                 cell.setupData(typeOfNews: .everything, everythingData: data, topHeadlinesData: nil)
             }
@@ -139,13 +139,13 @@ extension HomeViewController:UITableViewDelegate,UITableViewDataSource{
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         switch section{
         case 0:
-            let view = Bundle.main.loadNibNamed(HomeConstants.BreakingNewsHeaderTableViewCell, owner: self)?.first as? BreakingNewsHeaderTableViewCell
+            let view = Bundle.main.loadNibNamed(Constants.BreakingNewsHeaderTableViewCell, owner: self)?.first as? BreakingNewsHeaderTableViewCell
             view?.typeOfNews = .topHeadlines
             view?.delegate = self
             return view
         case 1:
-            let view = Bundle.main.loadNibNamed(HomeConstants.BreakingNewsHeaderTableViewCell, owner: self)?.first as? BreakingNewsHeaderTableViewCell
-            view?.headerLabel.text = HomeConstants.recomendations
+            let view = Bundle.main.loadNibNamed(Constants.BreakingNewsHeaderTableViewCell, owner: self)?.first as? BreakingNewsHeaderTableViewCell
+            view?.headerLabel.text = Constants.recomendations
             view?.typeOfNews = .everything
             view?.delegate = self
             return view

@@ -32,7 +32,7 @@
                     </connections>
                 </button>
                 <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="yh7-0y-Pik">
-                    <rect key="frame" x="5" y="159" width="388" height="25"/>
+                    <rect key="frame" x="5" y="159" width="383" height="25"/>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="25" id="2ik-hP-MrZ"/>
@@ -62,7 +62,7 @@
                 <constraint firstItem="yh7-0y-Pik" firstAttribute="top" secondItem="mVc-sg-dmL" secondAttribute="bottom" constant="20" id="5jR-0D-yAe"/>
                 <constraint firstItem="zMd-Ps-XnX" firstAttribute="top" secondItem="yh7-0y-Pik" secondAttribute="bottom" constant="10" id="8M8-tT-bo7"/>
                 <constraint firstItem="zMd-Ps-XnX" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="AFg-pp-a1Y"/>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="yh7-0y-Pik" secondAttribute="trailing" id="PnN-mg-EMx"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="yh7-0y-Pik" secondAttribute="trailing" constant="5" id="PnN-mg-EMx"/>
                 <constraint firstItem="mVc-sg-dmL" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="R0b-6a-ffg"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="mVc-sg-dmL" secondAttribute="trailing" constant="20" id="a6t-xS-FU2"/>
                 <constraint firstAttribute="bottom" secondItem="zMd-Ps-XnX" secondAttribute="bottom" id="a81-kR-8PP"/>
