@@ -17,6 +17,7 @@ struct Constants{
     
     static let recomendations = "Recomendations"
     static let trending = "Trending"
+    static let error = "Error"
     
 //    COUNTRY
     static let any = "Any"
